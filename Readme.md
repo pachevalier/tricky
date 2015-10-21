@@ -9,4 +9,7 @@ Some useful R functions
 
 * [Hilary Parker's guide](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 
+## Git
+
+    $ git push -u origin master
 
