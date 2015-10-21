@@ -2,4 +2,5 @@
 
 export(french_formatting)
 export(percent_formatting)
+export(theme_elegant)
 export(unfrench_formatting)
