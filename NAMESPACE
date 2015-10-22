@@ -2,6 +2,7 @@
 
 export(french_formatting)
 export(percent_formatting)
+export(theme_cartography)
 export(theme_elegant)
 export(unfrench_formatting)
 export(week_of_the_year)

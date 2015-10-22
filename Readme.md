@@ -16,7 +16,8 @@
 
 ### ggplot themes
 
-* `theme_elegant()`
+* `theme_elegant()` : a simple theme for graphics
+* `theme_cartography()` : a theme for maps
 
 ## Useful resources for building packages
 
