@@ -1,8 +1,9 @@
 Package: tricky
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: some tricky functions
+Version: 0.1
+Authors@R: person("Paul-Antoine", "Chevalier", email = "pachevalier@gmail.com", role = c("aut", "cre"))
+Description: a collection of useful and tricky functions
 Depends: R (>= 3.2.2)
 License: What license is it under?
 LazyData: true
+url:https://github.com/blaquans/tricky
