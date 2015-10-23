@@ -9,6 +9,9 @@ percent_formatting(x)
 \arguments{
 \item{x}{the number you need to format}
 }
+\value{
+a string
+}
 \description{
 This function allows you to format percentages
 }

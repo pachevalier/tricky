@@ -7,7 +7,10 @@
 week_of_the_year(date)
 }
 \arguments{
-\item{date}{a date}
+\item{a}{date}
+}
+\value{
+a number
 }
 \description{
 This function allows you to the week number in one year for a given date

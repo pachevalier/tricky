@@ -1,7 +1,8 @@
 #' Converts French formatted numbers into numbers
 #'
 #' This function allows you to extract the value of French formatted numbers
-#' @param x the number you need to format
+#' @param a string containing a number
+#' @return a number
 #' @keywords format
 #' @export
 #' @examples

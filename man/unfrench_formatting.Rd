@@ -7,7 +7,10 @@
 unfrench_formatting(x)
 }
 \arguments{
-\item{x}{the number you need to format}
+\item{a}{string containing a number}
+}
+\value{
+a number
 }
 \description{
 This function allows you to extract the value of French formatted numbers

@@ -1,17 +1,18 @@
 Package: tricky
-Title: some tricky functions
+Title: some tricky R functions
 Version: 0.1
 Authors@R: person("Paul-Antoine", "Chevalier", email = "pachevalier@gmail.com", role = c("aut", "cre"))
-Description: a collection of useful and tricky functions
+Description: a collection of useful and tricky functions for everyday life
 Depends: R (>= 3.2.2)
 License: What license is it under?
 LazyData: true
-url:https://github.com/blaquans/tricky
-Imports:
+url: https://github.com/blaquans/tricky
+Imports: 
     stringr,
     lubridate
-Suggests:
+Suggests: 
     ggplot2,
     dplyr,
     grid,
-    scales
+    scales,
+    testthat

@@ -2,6 +2,7 @@
 #'
 #' This function allows you to format numbers according to French conventions
 #' @param x the number you need to format
+#' @return a string
 #' @keywords format
 #' @export
 #' @examples

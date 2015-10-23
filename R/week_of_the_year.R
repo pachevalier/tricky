@@ -1,7 +1,8 @@
 #' Compute the week of the year
 #'
 #' This function allows you to the week number in one year for a given date
-#' @param date a date
+#' @param a date
+#' @return a number
 #' @keywords date week
 #' @export
 #' @examples
