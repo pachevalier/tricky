@@ -8,8 +8,6 @@
 #' french_formatting(11000.12)
 #'
 french_formatting <- function(x) {
-  require(stringr, quietly = TRUE)
-  output <- str_trim(format(x, big.mark = " ", decimal.mark = ","))
+  output <- stringr::str_trim(format(x, big.mark = " ", decimal.mark = ","))
   return(output)
   }
-

@@ -8,5 +8,9 @@
 #' unfrench_formatting(x = "0,12")
 #'
 unfrench_formatting <- function(x) {
-  as.numeric(gsub(pattern = "[[:blank:]]", replacement = "", x = gsub(pattern = ",", replacement = ".", x = x)))
+  as.numeric(
+    gsub(pattern = "[[:blank:]]", replacement = "", x =
+           gsub(pattern = ",", replacement = ".", x = x)
+         )
+    )
 }

@@ -11,8 +11,13 @@
 #'
 week_of_the_year  <- function(date) {
   require("lubridate", quietly = TRUE)
-  1 + ((yday(date) + as.numeric(factor(weekdays(as.Date(paste0(year(date),"-01-01"))), levels = c("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche")))) - 2) %/%7
+  1 + ((lubridate::yday(date) +
+          as.numeric(
+            factor(
+              weekdays(
+                as.Date(paste0(year(date), "-01-01"))),
+              levels = c("lundi", "mardi", "mercredi",
+                         "jeudi", "vendredi", "samedi", "dimanche"))
+            )
+        ) - 2) %/% 7
 }
-
-
-

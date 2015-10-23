@@ -7,3 +7,11 @@ Depends: R (>= 3.2.2)
 License: What license is it under?
 LazyData: true
 url:https://github.com/blaquans/tricky
+Imports:
+    stringr,
+    lubridate
+Suggests:
+    ggplot2,
+    dplyr,
+    grid,
+    scales

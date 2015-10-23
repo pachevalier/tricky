@@ -7,5 +7,7 @@
 #' @examples
 #' percent_formatting(0.012)
 #'
-
-percent_formatting <- function(x) paste(100*x, "%", sep = " ")
+#'
+percent_formatting <- function(x) {
+  paste( 100 * x, "%", sep = " ")
+ }
