@@ -10,12 +10,11 @@
 #' week_of_the_year(seq(as.Date("1990-12-31"), as.Date("2015-12-31"), by = "year"))
 #'
 week_of_the_year  <- function(date) {
-  require("lubridate", quietly = TRUE)
   1 + ((lubridate::yday(date) +
           as.numeric(
             factor(
               weekdays(
-                as.Date(paste0(year(date), "-01-01"))),
+                as.Date(paste0(lubridate::year(date), "-01-01"))),
               levels = c("lundi", "mardi", "mercredi",
                          "jeudi", "vendredi", "samedi", "dimanche"))
             )

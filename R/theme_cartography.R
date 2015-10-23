@@ -10,9 +10,6 @@
 #'
 
 theme_cartography <- function (base_size = 12, base_family = "") {
-  require("ggplot2", quietly = TRUE)
-  require("scales", quietly = TRUE)
-  require("grid", quietly = TRUE)
   theme(
     line = element_line(colour = "black", size = 0.5,
                         linetype = 1, lineend = "butt"),
