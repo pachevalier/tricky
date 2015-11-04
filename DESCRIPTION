@@ -3,16 +3,18 @@ Title: some tricky R functions
 Version: 0.1
 Authors@R: person("Paul-Antoine", "Chevalier", email = "pachevalier@gmail.com", role = c("aut", "cre"))
 Description: a collection of useful and tricky functions for everyday life
-Depends: R (>= 3.2.2)
+Depends:
+    R (>= 3.2.2)
 License: What license is it under?
 LazyData: true
 url: https://github.com/blaquans/tricky
-Imports: 
+Imports:
     stringr,
-    lubridate
-Suggests: 
-    ggplot2,
+    lubridate,
+    ggplot2
+Suggests:
     dplyr,
     grid,
     scales,
     testthat
+RoxygenNote: 5.0.0

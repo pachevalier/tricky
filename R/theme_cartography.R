@@ -10,7 +10,7 @@
 #'
 
 theme_cartography <- function (base_size = 12, base_family = "") {
-  theme(
+  ggplot2::theme(
     line = element_line(colour = "black", size = 0.5,
                         linetype = 1, lineend = "butt"),
     rect = element_rect(fill = "white", colour = "black",
