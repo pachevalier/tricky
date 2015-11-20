@@ -15,7 +15,13 @@ theme_cartography(base_size = 12, base_family = "")
 An elegant theme for maps with ggplot2
 }
 \examples{
-ggplot() + theme_cartography()
+library("ggplot2")
+N <- 100
+df <- data.frame(x = rnorm(N))
+df$y <- 1 + df$x + rnorm(N)
+ggplot(data = df) +
+ geom_point(mapping = aes(x = x, y = y)) +
+ theme_cartography()
 
 }
 \keyword{ggplot}

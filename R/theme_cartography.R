@@ -6,7 +6,13 @@
 #' @keywords ggplot maps
 #' @export
 #' @examples
-#' ggplot() + theme_cartography()
+#' library("ggplot2")
+#' N <- 100
+#' df <- data.frame(x = rnorm(N))
+#' df$y <- 1 + df$x + rnorm(N)
+#' ggplot(data = df) +
+#'  geom_point(mapping = aes(x = x, y = y)) +
+#'  theme_cartography()
 #'
 
 theme_cartography <- function (base_size = 12, base_family = "") {
@@ -18,7 +24,10 @@ theme_cartography <- function (base_size = 12, base_family = "") {
     text = element_text(family = base_family, face = "plain",
                         colour = "black", size = base_size,
                         hjust = 0.5, vjust = 0.5,
-                        angle = 0, lineheight = 0.9),
+                        angle = 0, lineheight = 0.9,
+                        margin = margin(t = 0, r = 0, b = 0, l = 0,
+                                        unit = "cm"),
+                        debug = TRUE),
     strip.text = element_text(size = rel(0.8)),
     axis.line = element_line(colour = "grey95"),
     axis.text = element_blank(),

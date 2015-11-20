@@ -16,6 +16,7 @@ a number
 This function allows you to the week number in one year for a given date
 }
 \examples{
+library("lubridate")
 week_of_the_year(date = today())
 week_of_the_year(date = as.Date("2015-10-21"))
 week_of_the_year(seq(as.Date("1990-12-31"), as.Date("2015-12-31"), by = "year"))

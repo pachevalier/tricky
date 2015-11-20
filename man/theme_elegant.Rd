@@ -15,7 +15,13 @@ theme_elegant(base_size = 12, base_family = "")
 An elegant theme for ggplot2
 }
 \examples{
-ggplot() + theme_elegant()
+library("ggplot2")
+N <- 100
+df <- data.frame(x = rnorm(N))
+df$y <- 1 + df$x + rnorm(N)
+ggplot(data = df) +
+ geom_point(mapping = aes(x = x, y = y)) +
+ theme_elegant()
 }
 \keyword{ggplot}
 

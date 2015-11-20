@@ -25,7 +25,6 @@
 * [R Packages](http://r-pkgs.had.co.nz/), Hadley Wickham
 * [Karl Broman's introduction to git](http://kbroman.org/github_tutorial/)
 * [Karl Broman's personnal package](https://github.com/kbroman/broman)
+* [Karl Broman's R Package Primer](http://kbroman.org/pkg_primer/)
 
-### Git
 
-    $ git push -u origin master
