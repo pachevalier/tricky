@@ -26,4 +26,3 @@ ggplot(data = df) +
 }
 \keyword{ggplot}
 \keyword{maps}
-

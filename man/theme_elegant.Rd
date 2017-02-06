@@ -24,4 +24,3 @@ ggplot(data = df) +
  theme_elegant()
 }
 \keyword{ggplot}
-

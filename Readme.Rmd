@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Tibbles
+
+- `str_standardize()` takes a table and return standardized variable names (ie remove blank spaces and replace them with "_")
+- `set_standard_names()`takes a table and return a table with standardized variable names
+
+```{r}
+library(readxl)
+library(dplyr)
+
+#download.file(
+#  url = "http://www.data.gouv.fr/fr/datasets/panorama-des-grands-projets-si-de-letat-1/", 
+#  destfile = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+#  )
+
+read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>%   glimpse()
+```
+
+```{r}
+read_excel(
+  path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  ) %>% 
+  setNames(str_standardize(.)) %>%
+  glimpse()
+```
+
+
+```{r}
+read_excel(
+  path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  ) %>% 
+  set_standard_names() %>%
+  glimpse()
+```

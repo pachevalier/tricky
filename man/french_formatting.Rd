@@ -20,4 +20,3 @@ french_formatting(11000.12)
 
 }
 \keyword{format}
-
