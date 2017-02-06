@@ -11,4 +11,4 @@
 french_formatting <- function(x) {
   output <- stringr::str_trim(format(x, big.mark = " ", decimal.mark = ","))
   return(output)
-  }
+}

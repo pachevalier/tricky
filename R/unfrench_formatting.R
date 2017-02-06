@@ -12,6 +12,6 @@ unfrench_formatting <- function(x) {
   as.numeric(
     gsub(pattern = "[[:blank:]]", replacement = "", x =
            gsub(pattern = ",", replacement = ".", x = x)
-         )
     )
+  )
 }

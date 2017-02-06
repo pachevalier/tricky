@@ -11,4 +11,4 @@
 #'
 percent_formatting <- function(x) {
   paste( 100 * x, "%", sep = " ")
- }
+}
