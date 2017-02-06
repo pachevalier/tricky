@@ -2,6 +2,8 @@
 
 export(french_formatting)
 export(percent_formatting)
+export(set_standard_names)
+export(str_standardize)
 export(theme_cartography)
 export(theme_elegant)
 export(unfrench_formatting)
