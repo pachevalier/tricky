@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 ## Tibbles
@@ -11,7 +13,8 @@ output: html_notebook
 ```{r}
 library(readxl)
 library(dplyr)
-
+library(plyr)
+library(tricky)
 #download.file(
 #  url = "http://www.data.gouv.fr/fr/datasets/panorama-des-grands-projets-si-de-letat-1/", 
 #  destfile = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
@@ -36,3 +39,29 @@ read_excel(
   set_standard_names() %>%
   glimpse()
 ```
+
+## Missing values
+
+* `count_na()` returns a table of missing and non-missing values in a vector
+
+```{r}
+read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+  set_standard_names() %>% 
+  .$ministere_porteur %>% 
+  count_na()
+```
+
+```{r}
+read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+  ldply(.data = ., .fun = count_na, .id = "variable") %>% 
+  group_by(variable) %>% 
+  mutate(share = n / sum(n)) %>% 
+  filter(missing == TRUE) %>% 
+  select(variable, n_missing = n, share_missing = share)
+```
+
+```{r}
+plyr::ldply(.data = table_training, .fun = count_na)
+
+```
+

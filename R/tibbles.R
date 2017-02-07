@@ -1,3 +1,24 @@
+#' Count NA
+#'
+#' count_na count the number of NA in a vector
+#'
+#' @param x a vector
+#'
+#' @return a tibble
+#' @export
+#'
+#' @examples
+#' plyr::ldply(.data = table_training, .fun = count_na)
+#'
+count_na <- function(x) {
+  x %>%
+    is.na() %>%
+    factor() %>%
+    forcats::fct_count() %>%
+    dplyr::rename(missing = f)
+  }
+
+
 
 
 #' Standardize table names
@@ -20,6 +41,11 @@
 #'
 str_standardize <- function(x) {
   x %>% names() %>%
+    stringr::str_trim(side = "both") %>%
+    stringr::str_replace_all(
+      pattern = "[éèê]",
+      replacement = "e",
+      string = .) %>%
     stringr::str_replace_all(
       string = .,
       pattern = "[[:blank:]]",
@@ -36,6 +62,7 @@ str_standardize <- function(x) {
 #' @export
 #'
 #' @examples
+#'
 #' library(readxl)
 #' library(dplyr)
 #' read_excel(
