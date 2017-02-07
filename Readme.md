@@ -16,8 +16,3 @@
 * `percent_formatting()`
 * `unfrench_formatting()`
 
-### Ggplot
-
-* `theme_elegant()` : a simple theme for graphics
-* `theme_cartography()` : a theme for maps
-
