@@ -174,10 +174,6 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <div id="tibbles" class="section level2">
 <h2>Tibbles</h2>
-<ul>
-<li><code>str_standardize()</code> takes a table and return standardized variable names (ie remove blank spaces and replace them with “_“)</li>
-<li><code>set_standard_names()</code>takes a table and return a table with standardized variable names</li>
-</ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkeGwpXG5saWJyYXJ5KGRwbHlyKVxuYGBgIn0= -->
@@ -242,6 +238,12 @@ $ Date de publication                           &lt;dbl&gt; 42677, 42677, 42677,
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<div id="standardize-variable-names" class="section level3">
+<h3>Standardize variable names</h3>
+<ul>
+<li><code>str_standardize()</code> takes a table and return standardized variable names (ie remove blank spaces and replace them with “_“)</li>
+<li><code>set_standard_names()</code>takes a table and return a table with standardized variable names</li>
+</ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9leGNlbChcbiAgcGF0aCA9IFwicmF3LWRhdGEvRElOU0lDLVBhbm9yYW1hX2Rlc19ncmFuZHNfcHJvamV0c19TSV8yMDE2MTExNi54bHN4XCJcbiAgKSAlPiUgXG4gIHNldE5hbWVzKHN0cl9zdGFuZGFyZGl6ZSguKSkgJT4lXG4gIGdsaW1wc2UoKVxuYGBgIn0= -->
@@ -274,9 +276,8 @@ $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42677,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0cmlja3kpXG5yZWFkX2V4Y2VsKFxuICBwYXRoID0gXCJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3hcIlxuICApICU+JSBcbiAgc2V0X3N0YW5kYXJkX25hbWVzKCkgJT4lXG4gIGdsaW1wc2UoKVxuYGBgIn0= -->
-<pre class="r"><code>library(tricky)
-read_excel(
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9leGNlbChcbiAgcGF0aCA9IFwicmF3LWRhdGEvRElOU0lDLVBhbm9yYW1hX2Rlc19ncmFuZHNfcHJvamV0c19TSV8yMDE2MTExNi54bHN4XCJcbiAgKSAlPiUgXG4gIHNldF9zdGFuZGFyZF9uYW1lcygpICU+JVxuICBnbGltcHNlKClcbmBgYCJ9 -->
+<pre class="r"><code>read_excel(
   path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;
   ) %&gt;% 
   set_standard_names() %&gt;%
@@ -304,10 +305,11 @@ $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42677,
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="missing-values" class="section level2">
-<h2>Missing values</h2>
+<div id="missing-values" class="section level3">
+<h3>Missing values</h3>
 <ul>
 <li><code>count_na()</code> returns a table of missing and non-missing values in a vector</li>
+<li><code>detect_na()</code> returns a table with the number and the share of missing values for each variable</li>
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -317,7 +319,7 @@ $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42677,
   .$ministere_porteur %&gt;% 
   count_na()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVFUVThESVJDZHdxNU5OL0VqOFhkMEU3MTVOTEdlUEZWTmVzVXRyVVFLRFZEMTZBLzJOK3c2TEV4ak9jQU13M3Z6WnQ3eVlYWGJyQm9BWU1BNUE4WXhyUmhlRTZoZ0Z1TTNBTDhlQWNEUFU4VFBNWjRBejdUOGxOcGpkalgrcG1yOWVQLzB2TWlQNm1YNXVpaG9kYWVGSjlheDEwWjB3VHJNZWp5a2VvZm5OOUg1VURDYXRRaWkzVGl4azZXQXdWbzUxblNudkZkbVMwdWFnalJ6OXFzbDRxai9nOWN3REgyYTZRUTh0ZnVnckVFb2kwYlZ4V2dUVnhRdUR5YTJYcys3OTRQNW1OL0U4Yk9wa09XeXdmL3pLRm5SMmpVWkpjMVdHVW1yYXZFbWRYNWM0QXJqQnUzZUtSUElKNno2TnRnZ0NOZDBWbE1sK2QzL0FmbDdDdjhXQWdBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVFUVThESVJDZHdxNU5OL0VqOFhkMEQzcnlhR0k5ZWFxYTlJcGJXb2tVR3FEcTBSL3NiOWgxV0pqR2NvQVpodmZtemJ6bHcrcW1XVFVBd0lCekJveGpXakc4SmxEQkxNWnZBSDQ5QW9DZnA0aWZZendCbm1uNUtiWEg3R3I4VGRYNjhmN3BlWkVmMWN2eWRWSFE2azRMVDZ4anI0M29nbldZOVhoSTlRN1BiNkx6b1dBMGF4RkV1M0ZpSjBzQmc3VnlyT2xPZWEvTWxwWTBCV25tN0ZkTHhGSC9CNjloR1BvMDB3bDRhdmRCV1lOUUZvMnFpOUVtcmloY0hreHN2WjUzN3dmek1iK040MmRUSWN0bGcvL25VYktpdFdzeVNwcXRNcEpXMWVKTjZ2eTR3QlhHRGRxOVV5YVFUMWoxYmJCQkVLN3ByS1pLOHJ2L0E3MC90amtXQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["missing"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"FALSE","2":"57"},{"1":"TRUE","2":"236"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
@@ -328,35 +330,16 @@ $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42677,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9leGNlbChwYXRoID0gXCJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3hcIikgJT4lIFxuICBsZHBseSguZGF0YSA9IC4sIC5mdW4gPSBjb3VudF9uYSwgLmlkID0gXCJ2YXJpYWJsZVwiKSAlPiUgXG4gIGdyb3VwX2J5KHZhcmlhYmxlKSAlPiUgXG4gIG11dGF0ZShzaGFyZSA9IG4gLyBzdW0obikpICU+JSBcbiAgZmlsdGVyKG1pc3NpbmcgPT0gVFJVRSkgJT4lIFxuICBzZWxlY3QodmFyaWFibGUsIG4sIHNoYXJlKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9leGNlbChwYXRoID0gXCJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3hcIikgJT4lIFxuICBzZXRfc3RhbmRhcmRfbmFtZXMoKSAlPiUgXG4gIGRldGVjdF9uYSgpXG5gYGAifQ== -->
 <pre class="r"><code>read_excel(path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;) %&gt;% 
-  ldply(.data = ., .fun = count_na, .id = &quot;variable&quot;) %&gt;% 
-  group_by(variable) %&gt;% 
-  mutate(share = n / sum(n)) %&gt;% 
-  filter(missing == TRUE) %&gt;% 
-  select(variable, n, share)</code></pre>
+  set_standard_names() %&gt;% 
+  detect_na()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5jb2wiOjMsIm5yb3ciOjE1fSwicmRmIjoiSDRzSUFBQUFBQUFBQTQxVXpXNFRNUkIyZHBPMFRVbUtHb0VLNG1BaEpPZ2hrUW9uVGhGcTRGUlF4S2tDSWVGc25NYXQxMTdaM3NBSmV1RElJL0FBUkVIaUFUaXVoSGdOenNDaFBFRERlTmNPU1VDQ3c2eG52L2xtWnVmSCs3aDdlTHQyV0VNSUJTZ01BeFNFb0pZRGVKUlFHVzNZOHlWQ1lSTVVzSVIxT0xkeW8zWElNYUFoVkFHcGdxeUJySU5ZUnh0MEUrUUNpUFZyRkw1THdhdWNqaW5Yb0Ywc3JLY1diVDVrZ21tVHZWY1VKMUlabWlyc1RKY1hURUxHT0pKeHdxbHg0ZXFQQUJxa09GSHlHTURDWmFlWHYyRW1ERlZ4NFQ1UmpITG5kTDFMZGFSWVlwZ1VHSGl5ZjB3anc0WjZJVkxCdkhaZllFM0draW1jOEZSakRkL0Y2WEsyYWplYjlGUC9ocnVweWlhV2trM0dURU1HUVRtNFVJR0pFR0J4a1hkNkk2THA3NFNXRU1sVWFSZW52aSt6VDRCcXcrSnM0c0FyU3lCT2lNSkdFUkdOZk5UdEoxSlFQSlFpTWo2enMxeDl3QVF3YVV5RndVOGg1NUVpY1V4djZkMW5qdEU2WVBBTlk2bzBsS2h4MFVPTjd3bVJ3c0R3Z09JZVZVT3BZaHRHTzZkbWx4aHFiVW5hNXl3aU51M0t4Q3NSSjlvUGZMNEdReElacVVBN2Q4dGlsK3o3bjFMYWh2UEgzMjA1L3RQcCtiSjFwcS91M3JuMC9NMC96NC9mWHQvODhuYS9NMzIzK2ZWcyt2bS8vVHovdzk3dVFlZEd3K05GeWVGc3BjcmFnQmpTSGtLbjZXcFRCR0MrS2FFRDE4ZEVNZEtmejZ3a1BGdVBpRm9Oc2FIa2k3WVBZenNZbk1Kak5wdWRGVjFkSXEvSmZOdUJHalRkN1YzODBKSmFBYlpTWVVNUFd0RW9GU2V0UFhlNzdWOEF1WFFsTnpTdmgwWEtzbTlDeFkrYWlpTW1mRTBWVHZyemk5aUFFdklLMm9tQ3krcTdCcWh1RzJtSTU5VWl5VDFTYk16NUx6K1dFTHJIQkFBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["variable"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]},{"label":["share"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Ministère porteur","2":"236","3":"0.05369738"},{"1":"Ministère nom complet","2":"236","3":"0.05369738"},{"1":"Nom du projet","2":"236","3":"0.05369738"},{"1":"Projet interministériel","2":"236","3":"0.05369738"},{"1":"Description et objectifs du projet","2":"236","3":"0.05369738"},{"1":"En savoir plus sur le projet","2":"274","3":"0.06234357"},{"1":"Début","2":"237","3":"0.05392491"},{"1":"Durée prévisionnelle en année","2":"236","3":"0.05369738"},{"1":"Phase du projet en cours","2":"236","3":"0.05369738"},{"1":"Coût estimé","2":"236","3":"0.05369738"},{"1":"Coût estimé par tranche","2":"236","3":"0.05369738"},{"1":"Zone fonctionnelle","2":"236","3":"0.05369738"},{"1":"Financement [programme(s)]","2":"237","3":"0.05392491"},{"1":"Lien vers les Projets Annuels de Performances","2":"242","3":"0.05506257"},{"1":"Date de publication","2":"236","3":"0.05369738"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[15]},"pages":{}}}
-  </script>
+<!-- rnb-chunk-end -->
 </div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGx5cjo6bGRwbHkoLmRhdGEgPSB0YWJsZV90cmFpbmluZywgLmZ1biA9IGNvdW50X25hKVxuXG5gYGAifQ== -->
-<pre class="r"><code>plyr::ldply(.data = table_training, .fun = count_na)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6IGRlZmF1bHQKICBodG1sX25vdGVib29rOiBkZWZhdWx0Ci0tLQoKIyMgVGliYmxlcwoKLSBgc3RyX3N0YW5kYXJkaXplKClgIHRha2VzIGEgdGFibGUgYW5kIHJldHVybiBzdGFuZGFyZGl6ZWQgdmFyaWFibGUgbmFtZXMgKGllIHJlbW92ZSBibGFuayBzcGFjZXMgYW5kIHJlcGxhY2UgdGhlbSB3aXRoICJfIikKLSBgc2V0X3N0YW5kYXJkX25hbWVzKClgdGFrZXMgYSB0YWJsZSBhbmQgcmV0dXJuIGEgdGFibGUgd2l0aCBzdGFuZGFyZGl6ZWQgdmFyaWFibGUgbmFtZXMKCmBgYHtyfQpsaWJyYXJ5KHJlYWR4bCkKbGlicmFyeShkcGx5cikKbGlicmFyeShwbHlyKQpsaWJyYXJ5KHRyaWNreSkKI2Rvd25sb2FkLmZpbGUoCiMgIHVybCA9ICJodHRwOi8vd3d3LmRhdGEuZ291di5mci9mci9kYXRhc2V0cy9wYW5vcmFtYS1kZXMtZ3JhbmRzLXByb2pldHMtc2ktZGUtbGV0YXQtMS8iLCAKIyAgZGVzdGZpbGUgPSAicmF3LWRhdGEvRElOU0lDLVBhbm9yYW1hX2Rlc19ncmFuZHNfcHJvamV0c19TSV8yMDE2MTExNi54bHN4IgojICApCgpyZWFkX2V4Y2VsKHBhdGggPSAicmF3LWRhdGEvRElOU0lDLVBhbm9yYW1hX2Rlc19ncmFuZHNfcHJvamV0c19TSV8yMDE2MTExNi54bHN4IikgJT4lICAgZ2xpbXBzZSgpCmBgYAoKYGBge3J9CnJlYWRfZXhjZWwoCiAgcGF0aCA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giCiAgKSAlPiUgCiAgc2V0TmFtZXMoc3RyX3N0YW5kYXJkaXplKC4pKSAlPiUKICBnbGltcHNlKCkKYGBgCgoKYGBge3J9CnJlYWRfZXhjZWwoCiAgcGF0aCA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giCiAgKSAlPiUgCiAgc2V0X3N0YW5kYXJkX25hbWVzKCkgJT4lCiAgZ2xpbXBzZSgpCmBgYAoKIyMgTWlzc2luZyB2YWx1ZXMKCiogYGNvdW50X25hKClgIHJldHVybnMgYSB0YWJsZSBvZiBtaXNzaW5nIGFuZCBub24tbWlzc2luZyB2YWx1ZXMgaW4gYSB2ZWN0b3IKCmBgYHtyfQpyZWFkX2V4Y2VsKHBhdGggPSAicmF3LWRhdGEvRElOU0lDLVBhbm9yYW1hX2Rlc19ncmFuZHNfcHJvamV0c19TSV8yMDE2MTExNi54bHN4IikgJT4lIAogIHNldF9zdGFuZGFyZF9uYW1lcygpICU+JSAKICAuJG1pbmlzdGVyZV9wb3J0ZXVyICU+JSAKICBjb3VudF9uYSgpCmBgYAoKYGBge3J9CnJlYWRfZXhjZWwocGF0aCA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giKSAlPiUgCiAgbGRwbHkoLmRhdGEgPSAuLCAuZnVuID0gY291bnRfbmEsIC5pZCA9ICJ2YXJpYWJsZSIpICU+JSAKICBncm91cF9ieSh2YXJpYWJsZSkgJT4lIAogIG11dGF0ZShzaGFyZSA9IG4gLyBzdW0obikpICU+JSAKICBmaWx0ZXIobWlzc2luZyA9PSBUUlVFKSAlPiUgCiAgc2VsZWN0KHZhcmlhYmxlLCBuX21pc3NpbmcgPSBuLCBzaGFyZV9taXNzaW5nID0gc2hhcmUpCmBgYAoKYGBge3J9CnBseXI6OmxkcGx5KC5kYXRhID0gdGFibGVfdHJhaW5pbmcsIC5mdW4gPSBjb3VudF9uYSkKCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6IGRlZmF1bHQKICBodG1sX25vdGVib29rOiBkZWZhdWx0Ci0tLQoKIyMgVGliYmxlcwoKYGBge3J9CmxpYnJhcnkocmVhZHhsKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHBseXIpCmxpYnJhcnkodHJpY2t5KQojZG93bmxvYWQuZmlsZSgKIyAgdXJsID0gImh0dHA6Ly93d3cuZGF0YS5nb3V2LmZyL2ZyL2RhdGFzZXRzL3Bhbm9yYW1hLWRlcy1ncmFuZHMtcHJvamV0cy1zaS1kZS1sZXRhdC0xLyIsIAojICBkZXN0ZmlsZSA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giCiMgICkKCnJlYWRfZXhjZWwocGF0aCA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giKSAlPiUgICBnbGltcHNlKCkKYGBgCgojIyMgU3RhbmRhcmRpemUgdmFyaWFibGUgbmFtZXMKCi0gYHN0cl9zdGFuZGFyZGl6ZSgpYCB0YWtlcyBhIHRhYmxlIGFuZCByZXR1cm4gc3RhbmRhcmRpemVkIHZhcmlhYmxlIG5hbWVzIChpZSByZW1vdmUgYmxhbmsgc3BhY2VzIGFuZCByZXBsYWNlIHRoZW0gd2l0aCAiXyIpCi0gYHNldF9zdGFuZGFyZF9uYW1lcygpYHRha2VzIGEgdGFibGUgYW5kIHJldHVybiBhIHRhYmxlIHdpdGggc3RhbmRhcmRpemVkIHZhcmlhYmxlIG5hbWVzCgpgYGB7cn0KcmVhZF9leGNlbCgKICBwYXRoID0gInJhdy1kYXRhL0RJTlNJQy1QYW5vcmFtYV9kZXNfZ3JhbmRzX3Byb2pldHNfU0lfMjAxNjExMTYueGxzeCIKICApICU+JSAKICBzZXROYW1lcyhzdHJfc3RhbmRhcmRpemUoLikpICU+JQogIGdsaW1wc2UoKQpgYGAKCgpgYGB7cn0KcmVhZF9leGNlbCgKICBwYXRoID0gInJhdy1kYXRhL0RJTlNJQy1QYW5vcmFtYV9kZXNfZ3JhbmRzX3Byb2pldHNfU0lfMjAxNjExMTYueGxzeCIKICApICU+JSAKICBzZXRfc3RhbmRhcmRfbmFtZXMoKSAlPiUKICBnbGltcHNlKCkKYGBgCgojIyMgTWlzc2luZyB2YWx1ZXMKCiogYGNvdW50X25hKClgIHJldHVybnMgYSB0YWJsZSBvZiBtaXNzaW5nIGFuZCBub24tbWlzc2luZyB2YWx1ZXMgaW4gYSB2ZWN0b3IKKiBgZGV0ZWN0X25hKClgIHJldHVybnMgYSB0YWJsZSB3aXRoIHRoZSBudW1iZXIgYW5kIHRoZSBzaGFyZSBvZiBtaXNzaW5nIHZhbHVlcyBmb3IgZWFjaCB2YXJpYWJsZQoKYGBge3J9CnJlYWRfZXhjZWwocGF0aCA9ICJyYXctZGF0YS9ESU5TSUMtUGFub3JhbWFfZGVzX2dyYW5kc19wcm9qZXRzX1NJXzIwMTYxMTE2Lnhsc3giKSAlPiUgCiAgc2V0X3N0YW5kYXJkX25hbWVzKCkgJT4lIAogIC4kbWluaXN0ZXJlX3BvcnRldXIgJT4lIAogIGNvdW50X25hKCkKYGBgCgpgYGB7cn0KcmVhZF9leGNlbChwYXRoID0gInJhdy1kYXRhL0RJTlNJQy1QYW5vcmFtYV9kZXNfZ3JhbmRzX3Byb2pldHNfU0lfMjAxNjExMTYueGxzeCIpICU+JSAKICBzZXRfc3RhbmRhcmRfbmFtZXMoKSAlPiUgCiAgZGV0ZWN0X25hKCkKYGBgCg==</div>
 
 
 

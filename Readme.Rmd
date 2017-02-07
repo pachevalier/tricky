@@ -7,9 +7,6 @@ output:
 
 ## Tibbles
 
-- `str_standardize()` takes a table and return standardized variable names (ie remove blank spaces and replace them with "_")
-- `set_standard_names()`takes a table and return a table with standardized variable names
-
 ```{r}
 library(readxl)
 library(dplyr)
@@ -22,6 +19,11 @@ library(tricky)
 
 read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>%   glimpse()
 ```
+
+### Standardize variable names
+
+- `str_standardize()` takes a table and return standardized variable names (ie remove blank spaces and replace them with "_")
+- `set_standard_names()`takes a table and return a table with standardized variable names
 
 ```{r}
 read_excel(
@@ -40,9 +42,10 @@ read_excel(
   glimpse()
 ```
 
-## Missing values
+### Missing values
 
 * `count_na()` returns a table of missing and non-missing values in a vector
+* `detect_na()` returns a table with the number and the share of missing values for each variable
 
 ```{r}
 read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
@@ -53,15 +56,6 @@ read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
 
 ```{r}
 read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
-  ldply(.data = ., .fun = count_na, .id = "variable") %>% 
-  group_by(variable) %>% 
-  mutate(share = n / sum(n)) %>% 
-  filter(missing == TRUE) %>% 
-  select(variable, n_missing = n, share_missing = share)
+  set_standard_names() %>% 
+  detect_na()
 ```
-
-```{r}
-plyr::ldply(.data = table_training, .fun = count_na)
-
-```
-

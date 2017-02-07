@@ -122,10 +122,6 @@ $(document).ready(function () {
 
 <div id="tibbles" class="section level2">
 <h2>Tibbles</h2>
-<ul>
-<li><code>str_standardize()</code> takes a table and return standardized variable names (ie remove blank spaces and replace them with “_“)</li>
-<li><code>set_standard_names()</code>takes a table and return a table with standardized variable names</li>
-</ul>
 <pre class="r"><code>library(readxl)
 library(dplyr)</code></pre>
 <pre><code>## 
@@ -172,6 +168,12 @@ read_excel(path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.
 ## $ Financement [programme(s)]                    &lt;chr&gt; &quot;Coordination du...
 ## $ Lien vers les Projets Annuels de Performances &lt;chr&gt; &quot;http://www.perf...
 ## $ Date de publication                           &lt;dbl&gt; 42677, 42677, 42...</code></pre>
+<div id="standardize-variable-names" class="section level3">
+<h3>Standardize variable names</h3>
+<ul>
+<li><code>str_standardize()</code> takes a table and return standardized variable names (ie remove blank spaces and replace them with “_“)</li>
+<li><code>set_standard_names()</code>takes a table and return a table with standardized variable names</li>
+</ul>
 <pre class="r"><code>read_excel(
   path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;
   ) %&gt;% 
@@ -179,80 +181,83 @@ read_excel(path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.
   glimpse()</code></pre>
 <pre><code>## Observations: 293
 ## Variables: 15
-## $ ministère_porteur_                            &lt;chr&gt; &quot;SPM&quot;, &quot;SPM&quot;, &quot;S...
-## $ ministère_nom_complet                         &lt;chr&gt; &quot;Premier ministr...
+## $ ministere_porteur                             &lt;chr&gt; &quot;SPM&quot;, &quot;SPM&quot;, &quot;S...
+## $ ministere_nom_complet                         &lt;chr&gt; &quot;Premier ministr...
 ## $ nom_du_projet                                 &lt;chr&gt; &quot;FRANCE CONNECT&quot;...
-## $ projet_interministériel                       &lt;chr&gt; &quot;Oui&quot;, &quot;Oui&quot;, &quot;O...
+## $ projet_interministeriel                       &lt;chr&gt; &quot;Oui&quot;, &quot;Oui&quot;, &quot;O...
 ## $ description_et_objectifs_du_projet            &lt;chr&gt; &quot;FranceConnect o...
 ## $ en_savoir_plus_sur_le_projet                  &lt;chr&gt; &quot;https://doc.int...
-## $ début                                         &lt;dbl&gt; 41456, 40725, 41...
-## $ durée_prévisionnelle_en_année                 &lt;chr&gt; &quot;3.7506849315068...
+## $ debut                                         &lt;dbl&gt; 41456, 40725, 41...
+## $ duree_previsionnelle_en_annee                 &lt;chr&gt; &quot;3.7506849315068...
 ## $ phase_du_projet_en_cours                      &lt;chr&gt; &quot;Déploiement&quot;, &quot;...
-## $ coût_estimé                                   &lt;chr&gt; &quot;7&quot;, &quot;52&quot;, &quot;26.3...
-## $ coût_estimé_par_tranche                       &lt;chr&gt; &quot;entre 5 et 9 M€...
+## $ coût_estime                                   &lt;chr&gt; &quot;7&quot;, &quot;52&quot;, &quot;26.3...
+## $ coût_estime_par_tranche                       &lt;chr&gt; &quot;entre 5 et 9 M€...
 ## $ zone_fonctionnelle                            &lt;chr&gt; &quot;Gestion et cont...
 ## $ financement_[programme(s)]                    &lt;chr&gt; &quot;Coordination du...
 ## $ lien_vers_les_projets_annuels_de_performances &lt;chr&gt; &quot;http://www.perf...
 ## $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42...</code></pre>
-<pre class="r"><code>library(tricky)
-read_excel(
+<pre class="r"><code>read_excel(
   path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;
   ) %&gt;% 
   set_standard_names() %&gt;%
   glimpse()</code></pre>
 <pre><code>## Observations: 293
 ## Variables: 15
-## $ ministère_porteur_                            &lt;chr&gt; &quot;SPM&quot;, &quot;SPM&quot;, &quot;S...
-## $ ministère_nom_complet                         &lt;chr&gt; &quot;Premier ministr...
+## $ ministere_porteur                             &lt;chr&gt; &quot;SPM&quot;, &quot;SPM&quot;, &quot;S...
+## $ ministere_nom_complet                         &lt;chr&gt; &quot;Premier ministr...
 ## $ nom_du_projet                                 &lt;chr&gt; &quot;FRANCE CONNECT&quot;...
-## $ projet_interministériel                       &lt;chr&gt; &quot;Oui&quot;, &quot;Oui&quot;, &quot;O...
+## $ projet_interministeriel                       &lt;chr&gt; &quot;Oui&quot;, &quot;Oui&quot;, &quot;O...
 ## $ description_et_objectifs_du_projet            &lt;chr&gt; &quot;FranceConnect o...
 ## $ en_savoir_plus_sur_le_projet                  &lt;chr&gt; &quot;https://doc.int...
-## $ début                                         &lt;dbl&gt; 41456, 40725, 41...
-## $ durée_prévisionnelle_en_année                 &lt;chr&gt; &quot;3.7506849315068...
+## $ debut                                         &lt;dbl&gt; 41456, 40725, 41...
+## $ duree_previsionnelle_en_annee                 &lt;chr&gt; &quot;3.7506849315068...
 ## $ phase_du_projet_en_cours                      &lt;chr&gt; &quot;Déploiement&quot;, &quot;...
-## $ coût_estimé                                   &lt;chr&gt; &quot;7&quot;, &quot;52&quot;, &quot;26.3...
-## $ coût_estimé_par_tranche                       &lt;chr&gt; &quot;entre 5 et 9 M€...
+## $ coût_estime                                   &lt;chr&gt; &quot;7&quot;, &quot;52&quot;, &quot;26.3...
+## $ coût_estime_par_tranche                       &lt;chr&gt; &quot;entre 5 et 9 M€...
 ## $ zone_fonctionnelle                            &lt;chr&gt; &quot;Gestion et cont...
 ## $ financement_[programme(s)]                    &lt;chr&gt; &quot;Coordination du...
 ## $ lien_vers_les_projets_annuels_de_performances &lt;chr&gt; &quot;http://www.perf...
 ## $ date_de_publication                           &lt;dbl&gt; 42677, 42677, 42...</code></pre>
 </div>
-<div id="missing-values" class="section level2">
-<h2>Missing values</h2>
+<div id="missing-values" class="section level3">
+<h3>Missing values</h3>
+<ul>
+<li><code>count_na()</code> returns a table of missing and non-missing values in a vector</li>
+<li><code>detect_na()</code> returns a table with the number and the share of missing values for each variable</li>
+</ul>
 <pre class="r"><code>read_excel(path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;) %&gt;% 
-  ldply(.data = ., .fun = count_na)</code></pre>
-<pre><code>##                                              .id     f   n
-## 1                             Ministère porteur  FALSE  57
-## 2                             Ministère porteur   TRUE 236
-## 3                          Ministère nom complet FALSE  57
-## 4                          Ministère nom complet  TRUE 236
-## 5                                  Nom du projet FALSE  57
-## 6                                  Nom du projet  TRUE 236
-## 7                        Projet interministériel FALSE  57
-## 8                        Projet interministériel  TRUE 236
-## 9             Description et objectifs du projet FALSE  57
-## 10            Description et objectifs du projet  TRUE 236
-## 11                  En savoir plus sur le projet FALSE  19
-## 12                  En savoir plus sur le projet  TRUE 274
-## 13                                         Début FALSE  56
-## 14                                         Début  TRUE 237
-## 15                 Durée prévisionnelle en année FALSE  57
-## 16                 Durée prévisionnelle en année  TRUE 236
-## 17                      Phase du projet en cours FALSE  57
-## 18                      Phase du projet en cours  TRUE 236
-## 19                                   Coût estimé FALSE  57
-## 20                                   Coût estimé  TRUE 236
-## 21                       Coût estimé par tranche FALSE  57
-## 22                       Coût estimé par tranche  TRUE 236
-## 23                            Zone fonctionnelle FALSE  57
-## 24                            Zone fonctionnelle  TRUE 236
-## 25                    Financement [programme(s)] FALSE  56
-## 26                    Financement [programme(s)]  TRUE 237
-## 27 Lien vers les Projets Annuels de Performances FALSE  51
-## 28 Lien vers les Projets Annuels de Performances  TRUE 242
-## 29                           Date de publication FALSE  57
-## 30                           Date de publication  TRUE 236</code></pre>
+  set_standard_names() %&gt;% 
+  .$ministere_porteur %&gt;% 
+  count_na()</code></pre>
+<pre><code>## # A tibble: 2 × 2
+##        f     n
+##   &lt;fctr&gt; &lt;int&gt;
+## 1  FALSE    57
+## 2   TRUE   236</code></pre>
+<pre class="r"><code>read_excel(path = &quot;raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&quot;) %&gt;% 
+  set_standard_names() %&gt;% 
+  detect_na()</code></pre>
+<pre><code>## Source: local data frame [15 x 3]
+## Groups: variable [15]
+## 
+##                                         variable n_missing share_missing
+##                                           &lt;fctr&gt;     &lt;int&gt;         &lt;dbl&gt;
+## 1                              ministere_porteur       236      80.54608
+## 2                          ministere_nom_complet       236      80.54608
+## 3                                  nom_du_projet       236      80.54608
+## 4                        projet_interministeriel       236      80.54608
+## 5             description_et_objectifs_du_projet       236      80.54608
+## 6                   en_savoir_plus_sur_le_projet       274      93.51536
+## 7                                          debut       237      80.88737
+## 8                  duree_previsionnelle_en_annee       236      80.54608
+## 9                       phase_du_projet_en_cours       236      80.54608
+## 10                                   coût_estime       236      80.54608
+## 11                       coût_estime_par_tranche       236      80.54608
+## 12                            zone_fonctionnelle       236      80.54608
+## 13                    financement_[programme(s)]       237      80.88737
+## 14 lien_vers_les_projets_annuels_de_performances       242      82.59386
+## 15                           date_de_publication       236      80.54608</code></pre>
+</div>
 </div>
 
 
