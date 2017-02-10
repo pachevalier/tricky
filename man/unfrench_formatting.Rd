@@ -20,3 +20,4 @@ unfrench_formatting(x = "0,12")
 
 }
 \keyword{format}
+

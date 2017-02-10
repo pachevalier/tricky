@@ -21,3 +21,4 @@ dplyr::collect() \%>\%
 detect_na()
 
 }
+

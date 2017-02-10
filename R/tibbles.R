@@ -77,8 +77,12 @@ str_standardize <- function(x) {
       replacement = "e",
       string = .) %>%
     stringr::str_replace_all(
+      pattern = "[ô]",
+      replacement = "o",
+      string = ".") %>%
+    stringr::str_replace_all(
       string = .,
-      pattern = "[[:blank:]]",
+      pattern = "[[:blank:]\\-]",
       replacement = "_"
     ) %>%
     stringr::str_to_lower()

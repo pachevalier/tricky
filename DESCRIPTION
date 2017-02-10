@@ -18,5 +18,8 @@ Suggests:
     dplyr,
     grid,
     scales,
-    testthat
-RoxygenNote: 6.0.0
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 5.0.1
+VignetteBuilder: knitr

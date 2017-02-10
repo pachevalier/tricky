@@ -19,3 +19,4 @@ count_na count the number of NA in a vector
 plyr::ldply(.data = table_training, .fun = count_na)
 
 }
+
