@@ -2,6 +2,7 @@
 
 export(count_na)
 export(detect_na)
+export(find_keys)
 export(french_formatting)
 export(percent_formatting)
 export(set_standard_names)

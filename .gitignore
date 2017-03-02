@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 inst/doc
+data-raw/*.csv
+data-raw/*.xlsx

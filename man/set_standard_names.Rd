@@ -4,10 +4,10 @@
 \alias{set_standard_names}
 \title{set standard names}
 \usage{
-set_standard_names(x)
+set_standard_names(.data)
 }
 \arguments{
-\item{x}{a tibble}
+\item{.data}{a tibble}
 }
 \value{
 a tibble with standardized column names
@@ -20,7 +20,7 @@ set standard names
 library(readxl)
 library(dplyr)
 read_excel(
-path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
 ) \%>\%
 set_standard_names()
 

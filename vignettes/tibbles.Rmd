@@ -1,0 +1,70 @@
+---
+title: "Tibbles"
+author: "Paul-Antoine Chevalier"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, message=FALSE}
+library(readxl)
+library(dplyr)
+library(plyr)
+library(tricky)
+library(readr)
+library(knitr)
+```
+
+## Find keys
+
+* `find_keys()` looks at a table and returns a data frame with the name of all available keys.
+
+```{r findkeys}
+read_csv("../data-raw/table_deputes.csv") %>% 
+  find_keys() 
+```
+
+## Standardize table names
+
+Many datasets have non standard variable names including accents (ie é, è, à, ...), spaces and so on. 
+
+The French IT Dashboard is an example of a data set with column names in natural language : 
+
+```{r itdashboard-names}
+read_excel(
+  path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  ) %>% 
+  names()
+```
+
+* `set_standard_names` takes a table and returns the same table with standardized names
+
+```{r str-standardize}
+read_excel(
+  path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  ) %>% 
+  set_standard_names() %>% 
+  glimpse()
+```
+
+## Detect missing values
+
+* `count_na()` returns a table of missing and non-missing values in a vector
+* `detect_na()` returns a table with the number and the share of missing values for each variable
+
+```{r count-na}
+read_excel(path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+  set_standard_names() %>% 
+  .$ministere_porteur %>% 
+  count_na()
+```
+
+
+```{r detect-na}
+read_excel(path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+  set_standard_names() %>% 
+  detect_na()
+```

@@ -49,48 +49,9 @@ detect_na <- function(table) {
 
 }
 
-
-
-#' Standardize table names
-#'
-#' Names in tables may include blank caracters and many undesirable features.
-#' str_standardize() makes it easy to standardize names and work with them inside R.
-#'
-#' @param x a tibble
-#'
-#' @return a vector of standardized names
-#' @export
-#'
-#' @examples
-#' library(readxl)
-#' library(dplyr)
-#' # source : http://www.data.gouv.fr/fr/datasets/panorama-des-grands-projets-si-de-letat-1/
-#' read_excel(path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>%
-#' setNames(str_standardize(.)) %>%
-#' glimpse()
-#'
-str_standardize <- function(x) {
-  x %>% names() %>%
-    stringr::str_trim(side = "both") %>%
-    stringr::str_replace_all(
-      pattern = "[éèê]",
-      replacement = "e",
-      string = .) %>%
-    stringr::str_replace_all(
-      pattern = "[ô]",
-      replacement = "o",
-      string = ".") %>%
-    stringr::str_replace_all(
-      string = .,
-      pattern = "[[:blank:]\\-]",
-      replacement = "_"
-    ) %>%
-    stringr::str_to_lower()
-}
-
 #' set standard names
 #'
-#' @param x a tibble
+#' @param .data a tibble
 #'
 #' @return a tibble with standardized column names
 #' @export
@@ -100,10 +61,51 @@ str_standardize <- function(x) {
 #' library(readxl)
 #' library(dplyr)
 #' read_excel(
-#' path = "raw-data/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+#' path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
 #' ) %>%
 #' set_standard_names()
 #'
-set_standard_names <- function(x) {
-  x %>% setNames(str_standardize(.))
+set_standard_names <- function(.data) {
+  setNames(
+    object = .data,
+    nm = str_standardize(string = names(.data))
+  )
+}
+
+#' find keys
+#'
+#' find_keys look at all function in a table and returns the list of possible keys (ie variables which identifies an observation)
+#'
+#' @param table the name of the input table (either tibble or data.frame)
+#'
+#' @return a tibble with one column : keys
+#' @export
+#'
+#' @examples
+#' read_csv("data-raw/table_deputes.csv") %>% find_keys()
+#'
+find_keys <- function(table) {
+  output_table <- plyr::ldply(
+    .data = table,
+    .fun = dplyr::n_distinct) %>%
+    dplyr::filter_(
+      .dots = list(
+        rlang::tidy_eval_rhs(
+          f = ~ V1 == nrow(table),
+          data = .
+        )
+      ),
+      .data = .
+    ) %>%
+    dplyr::select_(
+      .dots = list("keys" = ~ .id),
+      .data = .
+    )
+
+  if (nrow(output_table) == 0) {
+    print("No key in the table")
   }
+
+  return(output_table)
+}
+
