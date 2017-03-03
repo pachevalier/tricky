@@ -4,7 +4,7 @@
 \alias{set_standard_names}
 \title{set standard names}
 \usage{
-set_standard_names(.data, prefix)
+set_standard_names(.data, prefix = "var_")
 }
 \arguments{
 \item{.data}{a tibble}

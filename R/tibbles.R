@@ -66,7 +66,7 @@ detect_na <- function(table) {
 #' ) %>%
 #' set_standard_names()
 #'
-set_standard_names <- function(.data, prefix) {
+set_standard_names <- function(.data, prefix = "var_") {
   setNames(
     object = .data,
     nm = str_standardize(string = names(.data), prefix = prefix)

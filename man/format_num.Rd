@@ -13,10 +13,14 @@ format_num(x, locale, ...)
 
 \item{...}{}
 }
+\value{
+a formatted number
+}
 \description{
 Format num
 }
 \examples{
 format_num(x = 1233.123, locale = "fr")
 format_num(x = 1233.123, locale = "en")
+
 }

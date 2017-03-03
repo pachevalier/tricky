@@ -53,12 +53,13 @@ unfrench_formatting <- function(x) {
 #' @param locale a locale ("fr" or "en")
 #' @param ...
 #'
-#' @return
+#' @return a formatted number
 #' @export
 #'
 #' @examples
 #' format_num(x = 1233.123, locale = "fr")
 #' format_num(x = 1233.123, locale = "en")
+#'
 format_num <- function(x, locale, ...) {
 
   locales <- list(
