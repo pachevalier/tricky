@@ -16,11 +16,12 @@ library(tricky)
 library(dplyr)
 library(ggplot2)
 tibble(
-  date = seq(from = ymd("2017-01-01"), to = ymd("2017-12-31"), by = "day")
+  date = seq(from = ymd("2012-01-01"), to = ymd("2017-12-31"), by = "day")
   ) %>%
   mutate(
     week = week_of_the_year(date), 
-    day = wday(date)
+    day = wday(date), 
+    year = year(date)
   ) %>% 
   ggplot() + 
   geom_tile(
@@ -28,6 +29,7 @@ tibble(
     fill = "black", color = "white") + 
   scale_y_discrete() + 
   scale_x_discrete() + 
-  coord_equal()
+  coord_equal() + 
+  facet_wrap(~ year, ncol = 1)
 ```
 

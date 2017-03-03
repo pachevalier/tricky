@@ -46,3 +46,38 @@ unfrench_formatting <- function(x) {
     )
   )
 }
+
+#' Format num
+#'
+#' @param x a number
+#' @param locale a locale ("fr" or "en")
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' format_num(x = 1233.123, locale = "fr")
+#' format_num(x = 1233.123, locale = "en")
+format_num <- function(x, locale, ...) {
+
+  locales <- list(
+    fr = list(
+      big.mark = " ",
+      decimal.mark = ","
+    ),
+    en = list(
+      big.mark = ",",
+      decimal.mark = "."
+    )
+  )
+
+  format(
+    x = x,
+    big.mark = locales[[locale]][["big.mark"]],
+    decimal.mark = locales[[locale]][["decimal.mark"]],
+    ...
+  )
+
+}
+
