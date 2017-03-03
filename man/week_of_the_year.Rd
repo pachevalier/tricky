@@ -24,4 +24,3 @@ week_of_the_year(seq(as.Date("1990-12-31"), as.Date("2015-12-31"), by = "year"))
 }
 \keyword{date}
 \keyword{week}
-

@@ -52,6 +52,7 @@ detect_na <- function(table) {
 #' set standard names
 #'
 #' @param .data a tibble
+#' @param prefix name of the prefix for names beginning with numbers
 #'
 #' @return a tibble with standardized column names
 #' @export
@@ -65,10 +66,10 @@ detect_na <- function(table) {
 #' ) %>%
 #' set_standard_names()
 #'
-set_standard_names <- function(.data) {
+set_standard_names <- function(.data, prefix) {
   setNames(
     object = .data,
-    nm = str_standardize(string = names(.data))
+    nm = str_standardize(string = names(.data), prefix = prefix)
   )
 }
 

@@ -4,10 +4,12 @@
 \alias{set_standard_names}
 \title{set standard names}
 \usage{
-set_standard_names(.data)
+set_standard_names(.data, prefix)
 }
 \arguments{
 \item{.data}{a tibble}
+
+\item{prefix}{name of the prefix for names beginning with numbers}
 }
 \value{
 a tibble with standardized column names
@@ -25,4 +27,3 @@ path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
 set_standard_names()
 
 }
-

@@ -21,4 +21,3 @@ percent_formatting(0.012)
 
 }
 \keyword{format}
-

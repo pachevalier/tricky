@@ -1,0 +1,16 @@
+---
+title: "Strings"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(tricky)
+str_standardize("2017/07/07", prefix = "date_") 
+```
+

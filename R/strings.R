@@ -3,6 +3,7 @@
 #' Standardize removes accents, blank spaces, special caracters from a string
 #'
 #' @param string a string
+#' @param prefix a string
 #'
 #' @return a standardized string
 #' @export
@@ -14,11 +15,18 @@
 #' names() %>%
 #' str_standardize(.))
 #'
-str_standardize <- function(string) {
+str_standardize <- function(string, prefix = "var_") {
   string %>%
     stringr::str_trim(
       side = "both",
       string = . ) %>%
+    stringr::str_to_lower(
+      string = .
+    ) %>%
+    stringr::str_replace_all(
+      pattern = "[ç]",
+      replacement = "c",
+      string = .) %>%
     stringr::str_replace_all(
       pattern = "[éèê]",
       replacement = "e",
@@ -38,7 +46,7 @@ str_standardize <- function(string) {
     ) %>%
     stringr::str_replace_all(
       string = .,
-      pattern = "[[:blank:]\\-]",
+      pattern = "[[:blank:]\\-\\/]",
       replacement = "_"
     ) %>%
     stringr::str_replace_all(
@@ -46,7 +54,9 @@ str_standardize <- function(string) {
       pattern = "[\\[\\]\\(\\)]",
       replacement = ""
       ) %>%
-    stringr::str_to_lower(
-      string = .
-    )
+    stringr::str_replace(
+      string = .,
+      pattern = "^([[:digit:]].*)",
+      replacement = paste0(prefix, "\\1")
+      )
 }

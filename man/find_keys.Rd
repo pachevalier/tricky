@@ -19,4 +19,3 @@ find_keys look at all function in a table and returns the list of possible keys 
 read_csv("data-raw/table_deputes.csv") \%>\% find_keys()
 
 }
-

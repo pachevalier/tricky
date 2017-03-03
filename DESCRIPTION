@@ -14,7 +14,8 @@ Imports:
     ggplot2,
     forcats,
     plyr,
-    rlang
+    rlang,
+    magrittr
 Suggests:
     dplyr,
     grid,
@@ -22,5 +23,5 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr

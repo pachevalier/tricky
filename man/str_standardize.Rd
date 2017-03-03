@@ -4,10 +4,12 @@
 \alias{str_standardize}
 \title{Standardize}
 \usage{
-str_standardize(string)
+str_standardize(string, prefix = "var_")
 }
 \arguments{
 \item{string}{a string}
+
+\item{prefix}{a string}
 }
 \value{
 a standardized string
@@ -23,4 +25,3 @@ names() \%>\%
 str_standardize(.))
 
 }
-

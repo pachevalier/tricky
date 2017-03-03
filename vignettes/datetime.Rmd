@@ -1,0 +1,33 @@
+---
+title: "Dates"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(lubridate)
+library(tibble)
+library(tricky)
+library(dplyr)
+library(ggplot2)
+tibble(
+  date = seq(from = ymd("2017-01-01"), to = ymd("2017-12-31"), by = "day")
+  ) %>%
+  mutate(
+    week = week_of_the_year(date), 
+    day = wday(date)
+  ) %>% 
+  ggplot() + 
+  geom_tile(
+    mapping = aes(x = week, y = day), 
+    fill = "black", color = "white") + 
+  scale_y_discrete() + 
+  scale_x_discrete() + 
+  coord_equal()
+```
+
