@@ -1,7 +1,7 @@
 
 # Tricky
 
-***Tricky*** is an R package with miscellaneous R functions that are useful to me.
+A set of useful and tricky functions to work with data
 
 ## Installation
 
@@ -22,8 +22,8 @@
 
 * `format_num()` : format numbers according to a locale (fr or en)
 * `french_formatting()` : deprecated, use format_num() instead of french_formatting
-* `percent_formatting()`
-* `unfrench_formatting()`
+* `percent_formatting()` : 
+* `unfrench_formatting()` : 
 
 ### Strings
 
