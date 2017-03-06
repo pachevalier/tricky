@@ -9,7 +9,9 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-* `format_num` formats numbers according to a locale
+## Number formatting
+
+`format_num` formats numbers according to a locale (either French or English). `format_num()` is just a wrapper for the base-R `format()` function. Therefore, it is possible to use standard arguments of the `format()` functions such as `scientifif = TRUE/FALSE`.  
 
 ```{r}
 library(tricky)
@@ -18,5 +20,13 @@ format_num(x = 1233.123, locale = "fr")
 
 ```{r}
 format_num(x = 1233.123, locale = "en")
+```
+
+```{r}
+format_num(x = 1233.123, locale = "fr", scientific = TRUE)
+```
+
+```{r}
+format_num(x = 1233.123, locale = "en", scientific = TRUE)
 ```
 

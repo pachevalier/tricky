@@ -23,7 +23,7 @@ library(knitr)
 * `find_keys()` looks at a table and returns a data frame with the name of all available keys.
 
 ```{r findkeys}
-read_csv("../data-raw/table_deputes.csv") %>% 
+read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")) %>% 
   find_keys() 
 ```
 
@@ -35,7 +35,7 @@ The French IT Dashboard is an example of a data set with column names in natural
 
 ```{r itdashboard-names}
 read_excel(
-  path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
   ) %>% 
   names()
 ```
@@ -44,7 +44,7 @@ read_excel(
 
 ```{r str-standardize}
 read_excel(
-  path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+  path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
   ) %>% 
   set_standard_names() %>% 
   glimpse()
@@ -56,7 +56,13 @@ read_excel(
 * `detect_na()` returns a table with the number and the share of missing values for each variable
 
 ```{r count-na}
-read_excel(path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+read_excel(
+  path = system.file(
+    "extdata", 
+    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    package = "tricky"
+    )
+  ) %>% 
   set_standard_names() %>% 
   .$ministere_porteur %>% 
   count_na()
@@ -64,7 +70,13 @@ read_excel(path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xl
 
 
 ```{r detect-na}
-read_excel(path = "../data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") %>% 
+read_excel(
+  path = system.file(
+    "extdata", 
+    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    package = "tricky"
+    )
+  ) %>% 
   set_standard_names() %>% 
   detect_na()
 ```
