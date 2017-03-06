@@ -14,3 +14,7 @@ library(tricky)
 str_standardize("2017/07/07", prefix = "date_") 
 ```
 
+```{r}
+str_standardize("code externe de l'action")
+```
+

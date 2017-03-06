@@ -46,7 +46,7 @@ str_standardize <- function(string, prefix = "var_") {
     ) %>%
     stringr::str_replace_all(
       string = .,
-      pattern = "[[:blank:]\\-\\/]",
+      pattern = "[[:blank:]\\'\\-\\/]",
       replacement = "_"
     ) %>%
     stringr::str_replace_all(
