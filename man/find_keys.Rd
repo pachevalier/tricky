@@ -2,7 +2,7 @@
 % Please edit documentation in R/tibbles.R
 \name{find_keys}
 \alias{find_keys}
-\title{find keys}
+\title{Find keys}
 \usage{
 find_keys(table)
 }
@@ -16,6 +16,7 @@ a tibble with one column : keys
 find_keys look at all function in a table and returns the list of possible keys (ie variables which identifies an observation)
 }
 \examples{
-read_csv("data-raw/table_deputes.csv") \%>\% find_keys()
+read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
+)) \%>\% find_keys()
 
 }

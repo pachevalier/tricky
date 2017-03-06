@@ -16,8 +16,12 @@ a tibble with 3 columns (variable, n_missing, share_missing)
 Detect NA takes a tibble and return the number and share of missing values for each variable
 }
 \examples{
-dplyr::tbl(src = database_signauxfaibles, from = "table_training") \%>\%
-dplyr::collect() \%>\%
+read_excel(
+path = system.file(
+"extdata",
+"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+package = "tricky")
+) \%>\%
+set_standard_names() \%>\%
 detect_na()
-
 }

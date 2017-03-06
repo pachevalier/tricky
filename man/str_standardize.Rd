@@ -18,10 +18,7 @@ a standardized string
 Standardize removes accents, blank spaces, special caracters from a string
 }
 \examples{
-library(readxl)
-library(dplyr)
-read_excel(path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx") \%>\%
-names() \%>\%
-str_standardize(.))
+str_standardize("2017/07/07", prefix = "date_")
+str_standardize("code externe de l'action")
 
 }

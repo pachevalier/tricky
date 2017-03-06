@@ -2,7 +2,7 @@
 % Please edit documentation in R/tibbles.R
 \name{set_standard_names}
 \alias{set_standard_names}
-\title{set standard names}
+\title{Set standard names}
 \usage{
 set_standard_names(.data, prefix = "var_")
 }
@@ -15,14 +15,16 @@ set_standard_names(.data, prefix = "var_")
 a tibble with standardized column names
 }
 \description{
-set standard names
+Many datasets have bad column names featuring accents, blank spaces, slash, etc.
+Set standard names set standard names, ie names which can be used in programming.
 }
 \examples{
 
 library(readxl)
 library(dplyr)
+
 read_excel(
-path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
 ) \%>\%
 set_standard_names()
 

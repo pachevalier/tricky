@@ -16,6 +16,14 @@ a tibble
 count_na count the number of NA in a vector
 }
 \examples{
-plyr::ldply(.data = table_training, .fun = count_na)
+read_excel(
+path = system.file(
+"extdata",
+"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+package = "tricky")
+) \%>\%
+set_standard_names() \%>\%
+.$ministere_porteur \%>\%
+count_na()
 
 }

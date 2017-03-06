@@ -23,7 +23,12 @@ library(knitr)
 * `find_keys()` looks at a table and returns a data frame with the name of all available keys.
 
 ```{r findkeys}
-read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")) %>% 
+read_csv(
+  system.file(
+    "extdata", 
+    "table_deputes.csv", 
+    package = "tricky")
+  ) %>% 
   find_keys() 
 ```
 
@@ -35,7 +40,11 @@ The French IT Dashboard is an example of a data set with column names in natural
 
 ```{r itdashboard-names}
 read_excel(
-  path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
+  path = system.file(
+    "extdata", 
+    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    package = "tricky"
+    )
   ) %>% 
   names()
 ```
@@ -44,7 +53,11 @@ read_excel(
 
 ```{r str-standardize}
 read_excel(
-  path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
+  path = system.file(
+    "extdata", 
+    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    package = "tricky"
+    )
   ) %>% 
   set_standard_names() %>% 
   glimpse()

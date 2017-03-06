@@ -8,7 +8,15 @@
 #' @export
 #'
 #' @examples
-#' plyr::ldply(.data = table_training, .fun = count_na)
+#' read_excel(
+#' path = system.file(
+#' "extdata",
+#' "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+#' package = "tricky")
+#' ) %>%
+#' set_standard_names() %>%
+#' .$ministere_porteur %>%
+#' count_na()
 #'
 count_na <- function(x) {
   x %>%
@@ -27,10 +35,15 @@ count_na <- function(x) {
 #' @export
 #'
 #' @examples
-#' dplyr::tbl(src = database_signauxfaibles, from = "table_training") %>%
-#' dplyr::collect() %>%
+#' read_excel(
+#' path = system.file(
+#' "extdata",
+#' "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+#' package = "tricky")
+#' ) %>%
+#' set_standard_names() %>%
 #' detect_na()
-#'
+
 detect_na <- function(table) {
   table %>%
     plyr::ldply(.data = ., .fun = count_na, .id = "variable") %>%
@@ -49,7 +62,10 @@ detect_na <- function(table) {
 
 }
 
-#' set standard names
+#' Set standard names
+#'
+#' Many datasets have bad column names featuring accents, blank spaces, slash, etc.
+#' Set standard names set standard names, ie names which can be used in programming.
 #'
 #' @param .data a tibble
 #' @param prefix name of the prefix for names beginning with numbers
@@ -61,8 +77,9 @@ detect_na <- function(table) {
 #'
 #' library(readxl)
 #' library(dplyr)
+#'
 #' read_excel(
-#' path = "data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"
+#' path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
 #' ) %>%
 #' set_standard_names()
 #'
@@ -73,7 +90,7 @@ set_standard_names <- function(.data, prefix = "var_") {
   )
 }
 
-#' find keys
+#' Find keys
 #'
 #' find_keys look at all function in a table and returns the list of possible keys (ie variables which identifies an observation)
 #'
@@ -83,7 +100,8 @@ set_standard_names <- function(.data, prefix = "var_") {
 #' @export
 #'
 #' @examples
-#' read_csv("data-raw/table_deputes.csv") %>% find_keys()
+#' read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
+#' )) %>% find_keys()
 #'
 find_keys <- function(table) {
   output_table <- plyr::ldply(

@@ -60,8 +60,10 @@
 <span class="kw">library</span>(tibble)
 <span class="kw">library</span>(tricky)
 <span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">tibble</span>(
+<span class="kw">library</span>(ggplot2)</code></pre></div>
+<pre><code>## Want to understand how all the pieces fit together? Buy the
+## ggplot2 book: http://ggplot2.org/book/</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(
   <span class="dt">date =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">ymd</span>(<span class="st">"2016-01-01"</span>), <span class="dt">to =</span> <span class="kw">ymd</span>(<span class="st">"2017-12-31"</span>), <span class="dt">by =</span> <span class="st">"day"</span>)
   ) %&gt;%
 <span class="st">  </span><span class="kw">mutate</span>(

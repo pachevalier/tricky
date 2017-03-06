@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>find keys — find_keys • tricky</title>
+<title>Find keys — find_keys • tricky</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -69,7 +69,7 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>find keys</h1>
+    <h1>Find keys</h1>
     </div>
 
     
@@ -90,8 +90,13 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>read_csv</span>(<span class='st'>"data-raw/table_deputes.csv"</span>) <span class='kw'>%&gt;%</span> <span class='fu'>find_keys</span>()</div><div class='output co'>#&gt; <span class='error'>Error: &#39;data-raw/table_deputes.csv&#39; does not exist in current working directory (&#39;/home/debian/Documents/projets/tricky/docs/reference&#39;).</span></div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'>read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
+)) %>% find_keys()
+
+</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:2:2: &#39;)&#39; inattendu(e)</span>
+#&gt; <span class='error'>1: read_csv(system.file(&quot;extdata&quot;, &quot;table_deputes.csv&quot;, package = &quot;tricky&quot;)</span>
+#&gt; <span class='error'>2: ))</span>
+#&gt; <span class='error'>    ^</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

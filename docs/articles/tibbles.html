@@ -69,7 +69,12 @@
 <li>
 <code><a href="../reference/find_keys.html">find_keys()</a></code> looks at a table and returns a data frame with the name of all available keys.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read_csv</span>(<span class="kw">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"table_deputes.csv"</span>, <span class="dt">package =</span> <span class="st">"tricky"</span>)) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read_csv</span>(
+  <span class="kw">system.file</span>(
+    <span class="st">"extdata"</span>, 
+    <span class="st">"table_deputes.csv"</span>, 
+    <span class="dt">package =</span> <span class="st">"tricky"</span>)
+  ) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="../reference/find_keys.html">find_keys</a></span>() </code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
@@ -96,7 +101,11 @@
 <p>Many datasets have non standard variable names including accents (ie é, è, à, …), spaces and so on.</p>
 <p>The French IT Dashboard is an example of a data set with column names in natural language :</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read_excel</span>(
-  <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>, <span class="dt">package =</span> <span class="st">"tricky"</span>)
+  <span class="dt">path =</span> <span class="kw">system.file</span>(
+    <span class="st">"extdata"</span>, 
+    <span class="st">"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>, 
+    <span class="dt">package =</span> <span class="st">"tricky"</span>
+    )
   ) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">names</span>()</code></pre></div>
 <pre><code>##  [1] "Ministère porteur "                           
@@ -119,7 +128,11 @@
 <code>set_standard_names</code> takes a table and returns the same table with standardized names</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read_excel</span>(
-  <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>, <span class="dt">package =</span> <span class="st">"tricky"</span>)
+  <span class="dt">path =</span> <span class="kw">system.file</span>(
+    <span class="st">"extdata"</span>, 
+    <span class="st">"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>, 
+    <span class="dt">package =</span> <span class="st">"tricky"</span>
+    )
   ) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="../reference/set_standard_names.html">set_standard_names</a></span>() %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">glimpse</span>()</code></pre></div>

@@ -90,10 +90,14 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>dplyr</span><span class='kw'>::</span><span class='fu'>tbl</span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='no'>database_signauxfaibles</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"table_training"</span>) <span class='kw'>%&gt;%</span>
-<span class='kw'>dplyr</span><span class='kw'>::</span><span class='fu'>collect</span>() <span class='kw'>%&gt;%</span>
-<span class='fu'>detect_na</span>()</div><div class='output co'>#&gt; <span class='error'>Error in dplyr::tbl(src = database_signauxfaibles, from = &quot;table_training&quot;): objet &#39;database_signauxfaibles&#39; introuvable</span></div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>read_excel</span>(
+<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(
+<span class='st'>"extdata"</span>,
+<span class='st'>"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>,
+<span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"tricky"</span>)
+) <span class='kw'>%&gt;%</span>
+<span class='fu'><a href='set_standard_names.html'>set_standard_names</a></span>() <span class='kw'>%&gt;%</span>
+<span class='fu'>detect_na</span>()</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): impossible de trouver la fonction &quot;read_excel&quot;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

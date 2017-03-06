@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>set standard names — set_standard_names • tricky</title>
+<title>Set standard names — set_standard_names • tricky</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -69,11 +69,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>set standard names</h1>
+    <h1>Set standard names</h1>
     </div>
 
     
-    <p>set standard names</p>
+    <p>Many datasets have bad column names featuring accents, blank spaces, slash, etc.
+Set standard names set standard names, ie names which can be used in programming.</p>
     
 
     <pre><span class='fu'>set_standard_names</span>(<span class='no'>.data</span>, <span class='kw'>prefix</span> <span class='kw'>=</span> <span class='st'>"var_"</span>)</pre>
@@ -94,11 +95,37 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='fu'>library</span>(<span class='no'>readxl</span>)
-<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
 <span class='fu'>read_excel</span>(
-<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>
+<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>"extdata"</span>, <span class='st'>"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"tricky"</span>)
 ) <span class='kw'>%&gt;%</span>
-<span class='fu'>set_standard_names</span>()</div><div class='output co'>#&gt; <span class='error'>Error: &#39;data-raw/DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx&#39; does not exist in current working directory (&#39;/home/debian/Documents/projets/tricky/docs/reference&#39;).</span></div><div class='input'>
+<span class='fu'>set_standard_names</span>()</div><div class='output co'>#&gt; # A tibble: 293 × 15
+#&gt;    ministere_porteur
+#&gt;                &lt;chr&gt;
+#&gt; 1                SPM
+#&gt; 2                SPM
+#&gt; 3                SPM
+#&gt; 4                SPM
+#&gt; 5                SPM
+#&gt; 6              MAEDI
+#&gt; 7              MAEDI
+#&gt; 8              MAEDI
+#&gt; 9               MCAS
+#&gt; 10              MCAS
+#&gt; # ... with 283 more rows, and 14 more variables: ministere_nom_complet &lt;chr&gt;,
+#&gt; #   nom_du_projet &lt;chr&gt;, projet_interministeriel &lt;chr&gt;,
+#&gt; #   description_et_objectifs_du_projet &lt;chr&gt;,
+#&gt; #   en_savoir_plus_sur_le_projet &lt;chr&gt;, debut &lt;dbl&gt;,
+#&gt; #   duree_previsionnelle_en_annee &lt;chr&gt;, phase_du_projet_en_cours &lt;chr&gt;,
+#&gt; #   cout_estime &lt;chr&gt;, cout_estime_par_tranche &lt;chr&gt;, zone_fonctionnelle &lt;chr&gt;,
+#&gt; #   financement_programmes &lt;chr&gt;,
+#&gt; #   lien_vers_les_projets_annuels_de_performances &lt;chr&gt;,
+#&gt; #   date_de_publication &lt;dbl&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
