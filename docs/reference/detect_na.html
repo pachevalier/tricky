@@ -97,7 +97,26 @@
 <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"tricky"</span>)
 ) <span class='kw'>%&gt;%</span>
 <span class='fu'><a href='set_standard_names.html'>set_standard_names</a></span>() <span class='kw'>%&gt;%</span>
-<span class='fu'>detect_na</span>()</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): impossible de trouver la fonction &quot;read_excel&quot;</span></div></pre>
+<span class='fu'>detect_na</span>()</div><div class='output co'>#&gt; Source: local data frame [15 x 3]
+#&gt; Groups: variable [15]
+#&gt; 
+#&gt;                                         variable n_missing share_missing
+#&gt;                                           &lt;fctr&gt;     &lt;int&gt;         &lt;dbl&gt;
+#&gt; 1                              ministere_porteur       236      80.54608
+#&gt; 2                          ministere_nom_complet       236      80.54608
+#&gt; 3                                  nom_du_projet       236      80.54608
+#&gt; 4                        projet_interministeriel       236      80.54608
+#&gt; 5             description_et_objectifs_du_projet       236      80.54608
+#&gt; 6                   en_savoir_plus_sur_le_projet       274      93.51536
+#&gt; 7                                          debut       237      80.88737
+#&gt; 8                  duree_previsionnelle_en_annee       236      80.54608
+#&gt; 9                       phase_du_projet_en_cours       236      80.54608
+#&gt; 10                                   cout_estime       236      80.54608
+#&gt; 11                       cout_estime_par_tranche       236      80.54608
+#&gt; 12                            zone_fonctionnelle       236      80.54608
+#&gt; 13                        financement_programmes       237      80.88737
+#&gt; 14 lien_vers_les_projets_annuels_de_performances       242      82.59386
+#&gt; 15                           date_de_publication       236      80.54608</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

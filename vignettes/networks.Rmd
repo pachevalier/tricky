@@ -1,0 +1,47 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r}
+library(tricky)
+library(tibble)
+```
+
+Suppose we have a dataset with for each row the name of a node and the name of a group it belongs to. We want to have a dataset with all relationships between nodes (ie if A and B belong to the group a, they have one relationship.)
+
+* `make_single_node_node_table_` makes a table with one row for each relationship for a single node. 
+* `make_node_node_table_` makes a table with one row for each relationship for all nodes
+
+```{r}
+toy_data <- tibble::tibble(
+  node = c("A", "B", "C", "A", "B"),
+  link = c("a", "a", "b", "b", "b")
+  )
+toy_data
+```
+
+```{r}
+make_single_node_node_table_(
+  .data = toy_data,
+  .id = "A", 
+  node = "node",
+  link = "link"
+  )
+```
+
+```{r}
+make_node_node_table_(
+  .data = toy_data,
+  node = "node",
+  link = "link"
+  )
+```
+

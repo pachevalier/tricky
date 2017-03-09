@@ -33,3 +33,6 @@ A set of useful and tricky functions to work with data
 
 * `week_of_the_year()` : takes a date and returns the week number in the year.
 
+### Networks
+
+* `make_node_node_table_()` : transform a node-link table into a node-node table. 

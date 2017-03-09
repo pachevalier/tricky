@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strings • tricky</title>
+<title>Vignette Title • tricky</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -47,7 +47,7 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>Strings</h1>
+      <h1>Vignette Title</h1>
                         <h4 class="author">Vignette Author</h4>
             
             <h4 class="date">2017-03-09</h4>
@@ -57,10 +57,53 @@
     
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tricky)
-<span class="kw"><a href="../reference/str_standardize.html">str_standardize</a></span>(<span class="st">"2017/07/07"</span>, <span class="dt">prefix =</span> <span class="st">"date_"</span>) </code></pre></div>
-<pre><code>## [1] "date_2017_07_07"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/str_standardize.html">str_standardize</a></span>(<span class="st">"code externe de l'action"</span>)</code></pre></div>
-<pre><code>## [1] "code_externe_de_l_action"</code></pre>
+<span class="kw">library</span>(tibble)</code></pre></div>
+<p>Suppose we have a dataset with for each row the name of a node and the name of a group it belongs to. We want to have a dataset with all relationships between nodes (ie if A and B belong to the group a, they have one relationship.)</p>
+<ul>
+<li>
+<code>make_single_node_node_table_</code> makes a table with one row for each relationship for a single node.</li>
+<li>
+<code>make_node_node_table_</code> makes a table with one row for each relationship for all nodes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">toy_data &lt;-<span class="st"> </span>tibble::<span class="kw">tibble</span>(
+  <span class="dt">node =</span> <span class="kw">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>),
+  <span class="dt">link =</span> <span class="kw">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"b"</span>, <span class="st">"b"</span>)
+  )
+toy_data</code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##    node  link
+##   &lt;chr&gt; &lt;chr&gt;
+## 1     A     a
+## 2     B     a
+## 3     C     b
+## 4     A     b
+## 5     B     b</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/make_single_node_node_table_.html">make_single_node_node_table_</a></span>(
+  <span class="dt">.data =</span> toy_data,
+  <span class="dt">.id =</span> <span class="st">"A"</span>, 
+  <span class="dt">node =</span> <span class="st">"node"</span>,
+  <span class="dt">link =</span> <span class="st">"link"</span>
+  )</code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   node_A node_B
+##    &lt;chr&gt;  &lt;chr&gt;
+## 1      A      B
+## 2      A      C
+## 3      A      B</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/make_node_node_table_.html">make_node_node_table_</a></span>(
+  <span class="dt">.data =</span> toy_data,
+  <span class="dt">node =</span> <span class="st">"node"</span>,
+  <span class="dt">link =</span> <span class="st">"link"</span>
+  )</code></pre></div>
+<pre><code>##   node_A node_B
+## 1      A      B
+## 2      A      C
+## 3      A      B
+## 4      B      A
+## 5      B      C
+## 6      B      A
+## 7      C      A
+## 8      C      B</code></pre>
 </div>
   </div>
 
