@@ -50,34 +50,13 @@
       <h1>Dates</h1>
                         <h4 class="author">Vignette Author</h4>
             
-            <h4 class="date">2017-03-09</h4>
+            <h4 class="date">2017-03-14</h4>
           </div>
 
     
     
 <div class="contents">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
-<span class="kw">library</span>(tibble)
-<span class="kw">library</span>(tricky)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">tibble</span>(
-  <span class="dt">date =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">ymd</span>(<span class="st">"2016-01-01"</span>), <span class="dt">to =</span> <span class="kw">ymd</span>(<span class="st">"2017-12-31"</span>), <span class="dt">by =</span> <span class="st">"day"</span>)
-  ) %&gt;%
-<span class="st">  </span><span class="kw">mutate</span>(
-    <span class="dt">week =</span> <span class="kw"><a href="../reference/week_of_the_year.html">week_of_the_year</a></span>(date), 
-    <span class="dt">day =</span> <span class="kw">wday</span>(date), 
-    <span class="dt">year =</span> <span class="kw">year</span>(date)
-  ) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">ggplot</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_tile</span>(
-    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> week, <span class="dt">y =</span> day), 
-    <span class="dt">fill =</span> <span class="st">"black"</span>, <span class="dt">color =</span> <span class="st">"white"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">scale_y_discrete</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">coord_equal</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>year, <span class="dt">ncol =</span> <span class="dv">1</span>)</code></pre></div>
-<p><img src="datetime_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
+
 </div>
   </div>
 
