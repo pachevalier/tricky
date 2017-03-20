@@ -16,8 +16,8 @@ a tibble with one boolean column
 is_siren detect if the variable match the pattern of a SIRENE number
 }
 \examples{
-
-table_datadetective <- tibble::tibble(v1 = c("123456789", "234567890"), v2 = c("1234567890123", "1234567890234"))
+library("tibble")
+table_datadetective <- tibble(v1 = c("123456789", "234567890"), v2 = c("1234567890123", "1234567890234"))
 is_siren(var = table_datadetective$v1)
 is_siren(var = table_datadetective$v2)
 

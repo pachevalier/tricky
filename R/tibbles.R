@@ -8,6 +8,7 @@
 #' @export
 #'
 #' @examples
+#' library("readxl")
 #' read_excel(
 #' path = system.file(
 #' "extdata",
@@ -35,6 +36,7 @@ count_na <- function(x) {
 #' @export
 #'
 #' @examples
+#' library("readxl")
 #' read_excel(
 #' path = system.file(
 #' "extdata",
@@ -100,6 +102,7 @@ set_standard_names <- function(.data, prefix = "var_") {
 #' @export
 #'
 #' @examples
+#' library("readr")
 #' read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
 #' )) %>% find_keys()
 #'

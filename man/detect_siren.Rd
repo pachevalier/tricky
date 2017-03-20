@@ -17,6 +17,7 @@ detects if a data frame has a column of SIRENE identifier
 }
 \examples{
 
+library("tibble")
 table_datadetective <- tibble::tibble(v1 = c("123456789", "234567890"), v2 = c("1234567890123", "1234567890234"))
 detect_siren(.data = table_datadetective)
 

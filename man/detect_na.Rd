@@ -16,6 +16,7 @@ a tibble with 3 columns (variable, n_missing, share_missing)
 Detect NA takes a tibble and return the number and share of missing values for each variable
 }
 \examples{
+library("readxl")
 read_excel(
 path = system.file(
 "extdata",

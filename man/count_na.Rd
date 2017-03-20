@@ -16,6 +16,7 @@ a tibble
 count_na count the number of NA in a vector
 }
 \examples{
+library("readxl")
 read_excel(
 path = system.file(
 "extdata",
