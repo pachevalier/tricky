@@ -15,7 +15,10 @@ Imports:
     forcats,
     plyr,
     rlang,
-    magrittr
+    magrittr,
+    tibble,
+    readr,
+    readxl
 Suggests:
     dplyr,
     grid,

@@ -31,6 +31,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,7 +83,7 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>table</dt>
-      <dd>the name of the input table (either tibble or data.frame)</dd>
+      <dd><p>the name of the input table (either tibble or data.frame)</p></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -94,8 +96,8 @@
 read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
 )) %>% find_keys()
 
-</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:3:2: unexpected &#39;)&#39;</span>
-#&gt; <span class='error'>2: read_csv(system.file(&quot;extdata&quot;, &quot;table_deputes.csv&quot;, package = &quot;tricky&quot;)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:3:2: unexpected ')'</span>
+#&gt; <span class='error'>2: read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")</span>
 #&gt; <span class='error'>3: ))</span>
 #&gt; <span class='error'>    ^</span></div></pre>
   </div>

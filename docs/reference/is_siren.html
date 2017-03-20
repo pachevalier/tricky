@@ -31,6 +31,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,7 +83,7 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>var</dt>
-      <dd>name of a variable</dd>
+      <dd><p>name of a variable</p></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -91,7 +93,11 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"tibble"</span>)
-<span class='no'>table_datadetective</span> <span class='kw'>&lt;-</span> <span class='fu'>tibble</span>(<span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"123456789"</span>, <span class='st'>"234567890"</span>), <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"1234567890123"</span>, <span class='st'>"1234567890234"</span>))
+<span class='no'>table_datadetective</span> <span class='kw'>&lt;-</span> <span class='fu'>tibble</span>(
+   <span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"123456789"</span>, <span class='st'>"234567890"</span>),
+   <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"1234567890123"</span>, <span class='st'>"1234567890234"</span>)
+   )
+
 <span class='fu'>is_siren</span>(<span class='kw'>var</span> <span class='kw'>=</span> <span class='no'>table_datadetective</span>$<span class='no'>v1</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 1
 #&gt;       x
 #&gt;   &lt;lgl&gt;

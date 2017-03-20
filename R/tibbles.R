@@ -127,7 +127,32 @@ find_keys <- function(table) {
   if (nrow(output_table) == 0) {
     print("No key in the table")
   }
+ else {
+    return(output_table)
+  }
 
-  return(output_table)
+}
+
+#' Filter duplicates
+#'
+#' filter_dups() takes a data frame and returns only duplicated rows
+#'
+#' @param .data a data frame
+#' @param .groups a grouping variabme
+#'
+#' @return a data frame
+#' @export
+#'
+#' @examples
+#' table_test <- tibble::tibble(v1 = c("A", "A", "B", "C"), v2 = c("a", "b", "b", "c"))
+#' filter_dups_(.data = table_test, .groups = ~ v1)
+#' filter_dups_(.data = table_test, .groups = ~ v2)
+#'
+filter_dups_ <- function(.data, .groups) {
+  dplyr::group_by_(
+    .data = .data,
+    .dots = list(lazyeval::lazy_eval(~ .groups, data = .data))
+    ) %>%
+    dplyr::filter_(.dots = list(~ n() > 1))
 }
 

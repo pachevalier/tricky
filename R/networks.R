@@ -84,7 +84,7 @@ make_node_node_table_ <- function(.data, node, link) {
       .dots = lazyeval::interp(~ x, x = as.name(node))
     )[[1]],
     .fun = function(id) {
-      make_single_node_node_table_(
+      tricky::make_single_node_node_table_(
         .data = .data,
         .id = id,
         node = node,

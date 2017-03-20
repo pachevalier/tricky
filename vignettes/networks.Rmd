@@ -29,6 +29,7 @@ toy_data
 ```
 
 ```{r}
+library(tricky)
 make_single_node_node_table_(
   .data = toy_data,
   .id = "A", 
@@ -38,6 +39,7 @@ make_single_node_node_table_(
 ```
 
 ```{r}
+library(tricky)
 make_node_node_table_(
   .data = toy_data,
   node = "node",
