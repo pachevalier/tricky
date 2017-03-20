@@ -12,7 +12,7 @@
 #' read_excel(
 #' path = system.file(
 #' "extdata",
-#' "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+#'  "panorama.xlsx",
 #' package = "tricky")
 #' ) %>%
 #' set_standard_names() %>%
@@ -40,7 +40,7 @@ count_na <- function(x) {
 #' read_excel(
 #' path = system.file(
 #' "extdata",
-#' "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+#' "panorama.xlsx",
 #' package = "tricky")
 #' ) %>%
 #' set_standard_names() %>%
@@ -81,12 +81,12 @@ detect_na <- function(table) {
 #' library(dplyr)
 #'
 #' read_excel(
-#' path = system.file("extdata", "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", package = "tricky")
+#' path = system.file("extdata","panorama.xlsx", package = "tricky")
 #' ) %>%
 #' set_standard_names()
 #'
 set_standard_names <- function(.data, prefix = "var_") {
-  setNames(
+  stats::setNames(
     object = .data,
     nm = str_standardize(string = names(.data), prefix = prefix)
   )

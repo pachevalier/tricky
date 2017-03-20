@@ -10,7 +10,11 @@
 #'
 #' @examples
 #' library("tibble")
-#' table_datadetective <- tibble(v1 = c("123456789", "234567890"), v2 = c("1234567890123", "1234567890234"))
+#' table_datadetective <- tibble(
+#'    v1 = c("123456789", "234567890"),
+#'    v2 = c("1234567890123", "1234567890234")
+#'    )
+#'
 #' is_siren(var = table_datadetective$v1)
 #' is_siren(var = table_datadetective$v2)
 #'
@@ -24,12 +28,11 @@ is_siren <- function(var) {
   )
 }
 
-
 #' Detect Siren
 #'
 #' detects if a data frame has a column of SIRENE identifier
 #'
-#' @param .data
+#' @param .data a data frame
 #'
 #' @return a tibble
 #' @export
@@ -37,7 +40,12 @@ is_siren <- function(var) {
 #' @examples
 #'
 #' library("tibble")
-#' table_datadetective <- tibble::tibble(v1 = c("123456789", "234567890"), v2 = c("1234567890123", "1234567890234"))
+#'
+#' table_datadetective <- tibble::tibble(
+#'   v1 = c("123456789", "234567890"),
+#'   v2 = c("1234567890123", "1234567890234")
+#'   )
+#'
 #' detect_siren(.data = table_datadetective)
 #'
 detect_siren <- function(.data) {

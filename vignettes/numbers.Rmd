@@ -29,4 +29,3 @@ format_num(x = 1233.123, locale = "fr", scientific = TRUE)
 ```{r}
 format_num(x = 1233.123, locale = "en", scientific = TRUE)
 ```
-

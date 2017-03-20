@@ -43,7 +43,7 @@ The French IT Dashboard is an example of a data set with column names in natural
 read_excel(
   path = system.file(
     "extdata", 
-    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    "panorama.xlsx", 
     package = "tricky"
     )
   ) %>% 
@@ -56,7 +56,7 @@ read_excel(
 read_excel(
   path = system.file(
     "extdata", 
-    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    "panorama.xlsx", 
     package = "tricky"
     )
   ) %>% 
@@ -73,7 +73,7 @@ read_excel(
 read_excel(
   path = system.file(
     "extdata", 
-    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    "panorama.xlsx", 
     package = "tricky"
     )
   ) %>% 
@@ -87,7 +87,7 @@ read_excel(
 read_excel(
   path = system.file(
     "extdata", 
-    "DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx", 
+    "panorama.xlsx", 
     package = "tricky"
     )
   ) %>% 

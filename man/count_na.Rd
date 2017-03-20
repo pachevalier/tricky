@@ -20,7 +20,7 @@ library("readxl")
 read_excel(
 path = system.file(
 "extdata",
-"DINSIC-Panorama_des_grands_projets_SI_20161116.xlsx",
+ "panorama.xlsx",
 package = "tricky")
 ) \%>\%
 set_standard_names() \%>\%
