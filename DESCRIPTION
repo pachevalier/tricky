@@ -19,7 +19,8 @@ Imports:
     tibble,
     readr,
     readxl,
-    lazyeval
+    lazyeval,
+    rprojroot
 Suggests:
     dplyr,
     grid,
