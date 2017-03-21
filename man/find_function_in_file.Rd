@@ -18,6 +18,10 @@ a tibble with two columns
 Find a function in a file
 }
 \examples{
-find_function_in_file(function_name = "detect_na", file = "R/tibbles.R")
-
+\dontrun{
+find_function_in_file(
+function_name = "detect_na",
+file = system.file("R", "tibbles.R", package = "tricky")
+)
+}
 }

@@ -18,4 +18,7 @@ Extract all functions
 \examples{
 extract_all_functions(pkg = "tricky")
 extract_all_functions(pkg = "dplyr")
+lsf.str("package:tricky")
+ls("package:tricky")
+
 }

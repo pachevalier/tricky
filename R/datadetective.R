@@ -55,10 +55,6 @@ detect_siren <- function(.data) {
       dplyr::select_if(is.character),
     .fun = is_siren
   ) %>%
-  dplyr::filter_(
-    .dots = list(
-      rlang::tidy_eval_rhs( ~ x == TRUE, data = .)
-      )
-    )
+    dplyr::filter_(.dots = ~ x == TRUE)
 
-  }
+}

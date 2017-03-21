@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Filter duplicates — filter_dups_ • tricky</title>
+<title>Find function in the current RStudio project — find_function_in_project • tricky</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -71,44 +71,33 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Filter duplicates</h1>
+    <h1>Find function in the current RStudio project</h1>
     </div>
 
     
-    <p>filter_dups_() takes a data frame and returns only duplicated rows</p>
+    <p>Find function in the current RStudio project</p>
     
 
-    <pre><span class='fu'>filter_dups_</span>(<span class='no'>.data</span>, <span class='no'>.groups</span>)</pre>
+    <pre><span class='fu'>find_function_in_project</span>(<span class='no'>function_name</span>, <span class='no'>files</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>.data</dt>
-      <dd><p>a data frame</p></dd>
-      <dt>.groups</dt>
-      <dd><p>a grouping variabme</p></dd>
+      <dt>function_name</dt>
+      <dd><p>name of the project</p></dd>
+      <dt>files</dt>
+      <dd><p>type of files : "R" or "Rmd"</p></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a data frame</p>
+    <p>a tibble with two columns</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>table_test</span> <span class='kw'>&lt;-</span> <span class='kw'>tibble</span><span class='kw'>::</span><span class='fu'>tibble</span>(<span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"A"</span>, <span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"b"</span>, <span class='st'>"c"</span>))
-<span class='fu'>filter_dups_</span>(<span class='kw'>.data</span> <span class='kw'>=</span> <span class='no'>table_test</span>, <span class='kw'>.groups</span> <span class='kw'>=</span> ~ <span class='no'>v1</span>)</div><div class='output co'>#&gt; Source: local data frame [2 x 2]
-#&gt; Groups: v1 [1]
-#&gt; 
-#&gt;      v1    v2
-#&gt;   &lt;chr&gt; &lt;chr&gt;
-#&gt; 1     A     a
-#&gt; 2     A     b</div><div class='input'><span class='fu'>filter_dups_</span>(<span class='kw'>.data</span> <span class='kw'>=</span> <span class='no'>table_test</span>, <span class='kw'>.groups</span> <span class='kw'>=</span> ~ <span class='no'>v2</span>)</div><div class='output co'>#&gt; Source: local data frame [2 x 2]
-#&gt; Groups: v2 [1]
-#&gt; 
-#&gt;      v1    v2
-#&gt;   &lt;chr&gt; &lt;chr&gt;
-#&gt; 1     A     b
-#&gt; 2     B     b</div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+<span class='co'># find_function_in_project(function_name = "detect_na", file = "Rmd")</span>
+<span class='co'># find_function_in_project(function_name = "detect_na", file = "R")</span>
+<span class='co'>## ---------------------------------------------</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

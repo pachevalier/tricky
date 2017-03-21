@@ -92,14 +92,26 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>library("readr")
-read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
-)) %>% find_keys()
-
-</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:3:2: unexpected ')'</span>
-#&gt; <span class='error'>2: read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")</span>
-#&gt; <span class='error'>3: ))</span>
-#&gt; <span class='error'>    ^</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"readr"</span>)
+<span class='fu'>read_csv</span>(<span class='fu'>system.file</span>(<span class='st'>"extdata"</span>, <span class='st'>"table_deputes.csv"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"tricky"</span>)) <span class='kw'>%&gt;%</span>
+<span class='fu'>find_keys</span>()</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  nom = col_character(),</span>
+#&gt; <span class='message'>  genre = col_character(),</span>
+#&gt; <span class='message'>  prenom = col_character(),</span>
+#&gt; <span class='message'>  nom_famille = col_character(),</span>
+#&gt; <span class='message'>  date_naissance = col_datetime(format = ""),</span>
+#&gt; <span class='message'>  lieu_naissance = col_character(),</span>
+#&gt; <span class='message'>  circonscription = col_character(),</span>
+#&gt; <span class='message'>  sycomore_id = col_integer(),</span>
+#&gt; <span class='message'>  wikidata = col_character(),</span>
+#&gt; <span class='message'>  frwiki = col_character()</span>
+#&gt; <span class='message'>)</span></div><div class='output co'>#&gt;              keys
+#&gt; 1             nom
+#&gt; 2 circonscription
+#&gt; 3        wikidata
+#&gt; 4          frwiki</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -11,11 +11,16 @@ find_function_in_project(function_name, files)
 
 \item{files}{type of files : "R" or "Rmd"}
 }
+\value{
+a tibble with two columns
+}
 \description{
 Find function in the current RStudio project
 }
 \examples{
+\dontrun{
 find_function_in_project(function_name = "detect_na", file = "Rmd")
 find_function_in_project(function_name = "detect_na", file = "R")
+}
 
 }

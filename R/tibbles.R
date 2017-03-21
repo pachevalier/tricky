@@ -48,7 +48,9 @@ count_na <- function(x) {
 
 detect_na <- function(table) {
   table %>%
-    plyr::ldply(.data = ., .fun = count_na, .id = "variable") %>%
+    plyr::ldply(
+      .fun = count_na, .id = "variable"
+      ) %>%
     dplyr::group_by_(~ variable) %>%
     dplyr::mutate_(
       .dots = list(
@@ -59,9 +61,8 @@ detect_na <- function(table) {
       .dots = list(~ f == TRUE)
     ) %>%
     dplyr::select_(
-      .dots = list(~variable, "n_missing" = ~n, ~share_missing)
+      .dots = list(~ variable, "n_missing" = ~ n, ~ share_missing)
     )
-
 }
 
 #' Set standard names
@@ -107,27 +108,29 @@ set_standard_names <- function(.data, prefix = "var_") {
 #' find_keys()
 #'
 find_keys <- function(table) {
-  output_table <- plyr::ldply(
+
+  table_n_distinct <- plyr::ldply(
     .data = table,
-    .fun = dplyr::n_distinct) %>%
+    .fun = dplyr::n_distinct
+    )
+
+  output_table <- table_n_distinct %>%
     dplyr::filter_(
       .dots = list(
         rlang::tidy_eval_rhs(
           f = ~ V1 == nrow(table),
-          data = .
+          data = table_n_distinct
         )
-      ),
-      .data = .
-    ) %>%
+      )
+      ) %>%
     dplyr::select_(
-      .dots = list("keys" = ~ .id),
-      .data = .
-    )
+      .dots = list("keys" = ~ .id)
+      )
 
   if (nrow(output_table) == 0) {
     print("No key in the table")
   }
- else {
+  else {
     return(output_table)
   }
 

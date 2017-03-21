@@ -10,13 +10,16 @@
 #' @examples
 #' extract_all_functions(pkg = "tricky")
 #' extract_all_functions(pkg = "dplyr")
+#' lsf.str("package:tricky")
+#' ls("package:tricky")
+#'
 extract_all_functions <- function(pkg) {
 
   namespace <- readr::read_lines(
     file = system.file("NAMESPACE", package = pkg)
     )
 
-  pat <-"export\\(([[:alnum:]\\_]+)\\)"
+  pat <- "export\\(([[:alnum:]\\_]+)\\)"
 
   sub(
       pattern = pat,
@@ -35,8 +38,12 @@ extract_all_functions <- function(pkg) {
 #' @export
 #'
 #' @examples
-#' find_function_in_file(function_name = "detect_na", file = "R/tibbles.R")
-#'
+#' \dontrun{
+#' find_function_in_file(
+#' function_name = "detect_na",
+#' file = system.file("R", "tibbles.R", package = "tricky")
+#' )
+#' }
 find_function_in_file <- function(function_name, file) {
 
   function_pattern <- paste0(
@@ -64,12 +71,15 @@ find_function_in_file <- function(function_name, file) {
 #' @param function_name name of the project
 #' @param files type of files : "R" or "Rmd"
 #'
-#' @return
+#' @return a tibble with two columns
 #' @export
 #'
 #' @examples
+#'
+#' \dontrun{
 #' find_function_in_project(function_name = "detect_na", file = "Rmd")
 #' find_function_in_project(function_name = "detect_na", file = "R")
+#' }
 #'
 find_function_in_project <- function(function_name, files) {
 
@@ -86,7 +96,9 @@ find_function_in_project <- function(function_name, files) {
       recursive = TRUE,
       pattern = pat_file
     ),
-    .fun = function(x) {find_function_in_file(function_name = function_name, file = x)}
+    .fun = function(x) {
+      find_function_in_file( function_name = function_name, file = x)
+      }
   ) %>%
     dplyr::filter_(.dots = list( ~ find_function == TRUE))
 
