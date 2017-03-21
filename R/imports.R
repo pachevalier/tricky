@@ -2,4 +2,3 @@
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`
-

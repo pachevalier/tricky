@@ -62,4 +62,3 @@ detect_siren <- function(.data) {
     )
 
   }
-

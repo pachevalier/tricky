@@ -21,7 +21,3 @@ test_that("percent formatting returns the good outcome", {
   expect_equal(object = percent_formatting(0.12),
              expected = "12 %")
   })
-
-
-
-

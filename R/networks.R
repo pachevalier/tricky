@@ -99,4 +99,3 @@ make_node_node_table_ <- function(.data, node, link) {
     }
   )
 }
-

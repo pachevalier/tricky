@@ -7,4 +7,3 @@ test_that("str_length is number of characters", {
     "code_externe_de_l_action"
     )
 })
-

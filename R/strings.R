@@ -57,5 +57,3 @@ str_standardize <- function(string, prefix = "var_") {
       replacement = paste0(prefix, "\\1")
       )
 }
-
-

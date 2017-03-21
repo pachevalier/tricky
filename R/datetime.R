@@ -14,7 +14,7 @@
 #' week_of_the_year(seq(as.Date("1990-12-31"), as.Date("2015-12-31"), by = "year"))
 #'
 week_of_the_year  <- function(date) {
-  1 + ((lubridate::yday(date) +
+  1 + ( (lubridate::yday(date) +
           as.numeric(
             factor(
               weekdays(

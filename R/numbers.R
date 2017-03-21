@@ -83,4 +83,3 @@ format_num <- function(x, locale, ...) {
   )
 
 }
-
