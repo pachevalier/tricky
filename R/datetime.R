@@ -1,10 +1,12 @@
 #' Compute the week of the year
 #'
 #' This function allows you to the week number in one year for a given date
-#' @param a date
+#' @param date date
+#'
 #' @return a number
 #' @keywords date week
 #' @export
+#'
 #' @examples
 #' library("lubridate")
 #' week_of_the_year(date = today())

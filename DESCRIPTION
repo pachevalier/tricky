@@ -1,11 +1,11 @@
 Package: tricky
-Title: some tricky R functions
+Title: Tricky R functions
 Version: 0.1
 Authors@R: person("Paul-Antoine", "Chevalier", email = "pachevalier@gmail.com", role = c("aut", "cre"))
 Description: a collection of useful and tricky functions 
 Depends:
     R (>= 3.2.2)
-License: [GPL-3](https://www.r-project.org/Licenses/GPL-3)
+License: GPL-3
 LazyData: true
 url: https://github.com/blaquans/tricky
 Imports:
@@ -18,7 +18,8 @@ Imports:
     magrittr,
     tibble,
     readr,
-    readxl
+    readxl,
+    lazyeval
 Suggests:
     dplyr,
     grid,

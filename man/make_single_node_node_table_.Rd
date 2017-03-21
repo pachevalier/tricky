@@ -23,10 +23,13 @@ Make a single node node table
 }
 \examples{
 ## Toy data
+library("tibble")
+
 toy_data <- tibble::tibble(
 node = c("A", "B", "C", "A", "B"),
 link = c("a", "a", "b", "b", "b")
 )
+
 make_single_node_node_table_(
 .data = toy_data,
 .id = "A",

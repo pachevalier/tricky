@@ -7,7 +7,7 @@
 unfrench_formatting(x)
 }
 \arguments{
-\item{a}{string containing a number}
+\item{x}{string containing a number}
 }
 \value{
 a number

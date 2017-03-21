@@ -103,8 +103,8 @@ set_standard_names <- function(.data, prefix = "var_") {
 #'
 #' @examples
 #' library("readr")
-#' read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
-#' )) %>% find_keys()
+#' read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")) %>%
+#' find_keys()
 #'
 find_keys <- function(table) {
   output_table <- plyr::ldply(
@@ -135,7 +135,7 @@ find_keys <- function(table) {
 
 #' Filter duplicates
 #'
-#' filter_dups() takes a data frame and returns only duplicated rows
+#' filter_dups_() takes a data frame and returns only duplicated rows
 #'
 #' @param .data a data frame
 #' @param .groups a grouping variabme

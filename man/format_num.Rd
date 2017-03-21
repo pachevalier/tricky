@@ -11,7 +11,7 @@ format_num(x, locale, ...)
 
 \item{locale}{a locale ("fr" or "en")}
 
-\item{...}{}
+\item{...}{other parameter to format such scientific = TRUE/FALSE}
 }
 \value{
 a formatted number

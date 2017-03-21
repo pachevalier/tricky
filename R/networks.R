@@ -10,10 +10,13 @@
 #'
 #' @examples
 #' ## Toy data
+#' library("tibble")
+#'
 #' toy_data <- tibble::tibble(
 #' node = c("A", "B", "C", "A", "B"),
 #' link = c("a", "a", "b", "b", "b")
 #' )
+#'
 #' make_single_node_node_table_(
 #' .data = toy_data,
 #' .id = "A",
@@ -66,10 +69,13 @@ make_single_node_node_table_ <- function(.data, .id, node, link) {
 #'
 #' @examples
 #'
+#' library("tibble")
+#'
 #' toy_data <- tibble::tibble(
 #' node = c("A", "B", "C", "A", "B"),
 #' link = c("a", "a", "b", "b", "b")
 #' )
+#'
 #' make_node_node_table_(
 #' .data = toy_data,
 #' node = "node",

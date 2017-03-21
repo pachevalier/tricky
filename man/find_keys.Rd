@@ -17,7 +17,7 @@ find_keys look at all function in a table and returns the list of possible keys 
 }
 \examples{
 library("readr")
-read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")
-)) \%>\% find_keys()
+read_csv(system.file("extdata", "table_deputes.csv", package = "tricky")) \%>\%
+find_keys()
 
 }

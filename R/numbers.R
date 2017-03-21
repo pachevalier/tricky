@@ -32,10 +32,12 @@ percent_formatting <- function(x) {
 #' Converts French formatted numbers into numbers
 #'
 #' This function allows you to extract the value of French formatted numbers
-#' @param a string containing a number
+#' @param x string containing a number
+#'
 #' @return a number
 #' @keywords format
 #' @export
+#'
 #' @examples
 #' unfrench_formatting(x = "0,12")
 #'
@@ -51,7 +53,7 @@ unfrench_formatting <- function(x) {
 #'
 #' @param x a number
 #' @param locale a locale ("fr" or "en")
-#' @param ...
+#' @param ... other parameter to format such scientific = TRUE/FALSE
 #'
 #' @return a formatted number
 #' @export

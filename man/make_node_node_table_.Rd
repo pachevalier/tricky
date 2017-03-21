@@ -21,10 +21,13 @@ Make node node table
 }
 \examples{
 
+library("tibble")
+
 toy_data <- tibble::tibble(
 node = c("A", "B", "C", "A", "B"),
 link = c("a", "a", "b", "b", "b")
 )
+
 make_node_node_table_(
 .data = toy_data,
 node = "node",

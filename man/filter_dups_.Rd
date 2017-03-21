@@ -15,7 +15,7 @@ filter_dups_(.data, .groups)
 a data frame
 }
 \description{
-filter_dups() takes a data frame and returns only duplicated rows
+filter_dups_() takes a data frame and returns only duplicated rows
 }
 \examples{
 table_test <- tibble::tibble(v1 = c("A", "A", "B", "C"), v2 = c("a", "b", "b", "c"))

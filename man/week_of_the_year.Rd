@@ -7,7 +7,7 @@
 week_of_the_year(date)
 }
 \arguments{
-\item{a}{date}
+\item{date}{date}
 }
 \value{
 a number
