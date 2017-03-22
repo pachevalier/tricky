@@ -17,6 +17,9 @@ a standardized string
 \description{
 Standardize removes accents, blank spaces, special caracters from a string
 }
+\details{
+See http://stackoverflow.com/a/36898175/1967500 for the tricks to remove accents
+}
 \examples{
 str_standardize("2017/07/07", prefix = "date_")
 str_standardize("code externe de l'action")

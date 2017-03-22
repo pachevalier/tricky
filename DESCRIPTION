@@ -7,7 +7,7 @@ Depends:
     R (>= 3.2.2)
 License: GPL-3
 LazyData: true
-url: https://github.com/blaquans/tricky
+url: https://github.com/pachevalier/tricky
 Imports:
     stringr,
     lubridate,
@@ -20,7 +20,8 @@ Imports:
     readr,
     readxl,
     lazyeval,
-    rprojroot
+    rprojroot,
+    stringi
 Suggests:
     dplyr,
     grid,

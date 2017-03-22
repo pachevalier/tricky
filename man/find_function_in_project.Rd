@@ -18,6 +18,7 @@ a tibble with two columns
 Find function in the current RStudio project
 }
 \examples{
+
 \dontrun{
 find_function_in_project(function_name = "detect_na", file = "Rmd")
 find_function_in_project(function_name = "detect_na", file = "R")
