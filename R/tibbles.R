@@ -117,11 +117,11 @@ find_keys <- function(table) {
   output_table <- table_n_distinct %>%
     dplyr::filter_(
       .dots = list(
-        rlang::tidy_eval_rhs(
-          f = ~ V1 == nrow(table),
+        rlang::eval_tidy_rhs(
+          ~ V1 == nrow(table),
           data = table_n_distinct
+          )
         )
-      )
       ) %>%
     dplyr::select_(
       .dots = list("keys" = ~ .id)
