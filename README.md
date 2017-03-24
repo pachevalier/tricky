@@ -3,6 +3,8 @@
 
 A set of useful and tricky functions to work with data
 
+[![Build Status](https://travis-ci.org/pachevalier/tricky.svg?branch=master)](https://travis-ci.org/pachevalier/tricky)
+
 ## Installation
 
     library("devtools")
