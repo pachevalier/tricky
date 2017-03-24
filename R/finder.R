@@ -1,34 +1,3 @@
-
-
-#' Extract all functions
-#'
-#' @param pkg name of a package
-#'
-#' @return a list of all functions in a package
-#' @export
-#'
-#' @examples
-#' extract_all_functions(pkg = "tricky")
-#' extract_all_functions(pkg = "dplyr")
-#' lsf.str("package:tricky")
-#' ls("package:tricky")
-#'
-extract_all_functions <- function(pkg) {
-
-  namespace <- readr::read_lines(
-    file = system.file("NAMESPACE", package = pkg)
-    )
-
-  pat <- "export\\(([[:alnum:]\\_]+)\\)"
-
-  sub(
-      pattern = pat,
-      replacement = "\\1",
-      x = namespace[grepl(pattern = pat, x = namespace)]
-    )
-
-}
-
 #' Find a function in a file
 #'
 #' @param function_name name of the function
