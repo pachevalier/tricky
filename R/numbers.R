@@ -83,3 +83,33 @@ format_num <- function(x, locale, ...) {
   )
 
 }
+
+
+#' Studendize
+#'
+#' Normalizing a numerical vector using Student's normalization
+#'
+#'
+#' WARNING : This version doesn't handles vectors with missing values
+#'
+#' @param x a numeric vector
+#'
+#' @return a numeric vector
+#' @export
+#'
+#' @examples
+#'
+#' studendize(x = rep(1,10))
+#' studendize(x = 1:10) %>% mean()
+#' studendize(x = 1:10) %>% sd()
+#'
+studendize <- function(x) {
+  sdx <- stats::sd(x)
+
+  if (sdx != 0) {
+    (x - base::mean(x)) / stats::sd(x)
+  }
+  else {
+    x
+  }
+}

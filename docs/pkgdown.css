@@ -81,13 +81,6 @@ a.anchor {
   margin-bottom: 0.5em;
 }
 
-/* Nice scrolling for wide elements --------------------------------------- */
-
-table {
-  display: block;
-  overflow: auto;
-}
-
 /* Syntax highlighting ---------------------------------------------------- */
 
 code {

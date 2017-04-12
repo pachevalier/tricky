@@ -31,8 +31,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
   </head>
 
   <body>
@@ -83,7 +81,7 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>date</dt>
-      <dd><p>date</p></dd>
+      <dd>date</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -92,8 +90,10 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"lubridate"</span>)
-<span class='fu'>week_of_the_year</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>today</span>())</div><div class='output co'>#&gt; [1] 13</div><div class='input'><span class='fu'>week_of_the_year</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>as.Date</span>(<span class='st'>"2015-10-21"</span>))</div><div class='output co'>#&gt; [1] 43</div><div class='input'><span class='fu'>week_of_the_year</span>(<span class='fu'>seq</span>(<span class='fu'>as.Date</span>(<span class='st'>"1990-12-31"</span>), <span class='fu'>as.Date</span>(<span class='st'>"2015-12-31"</span>), <span class='kw'>by</span> <span class='kw'>=</span> <span class='st'>"year"</span>))</div><div class='output co'>#&gt;  [1] 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 54 53 53
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"lubridate"</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘lubridate’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    date</span></div><div class='input'><span class='fu'>week_of_the_year</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>today</span>())</div><div class='output co'>#&gt; [1] 16</div><div class='input'><span class='fu'>week_of_the_year</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>as.Date</span>(<span class='st'>"2015-10-21"</span>))</div><div class='output co'>#&gt; [1] 43</div><div class='input'><span class='fu'>week_of_the_year</span>(<span class='fu'>seq</span>(<span class='fu'>as.Date</span>(<span class='st'>"1990-12-31"</span>), <span class='fu'>as.Date</span>(<span class='st'>"2015-12-31"</span>), <span class='kw'>by</span> <span class='kw'>=</span> <span class='st'>"year"</span>))</div><div class='output co'>#&gt;  [1] 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 54 53 53
 #&gt; [26] 53</div><div class='input'>
 </div></pre>
   </div>

@@ -117,7 +117,7 @@ find_keys <- function(table) {
   output_table <- table_n_distinct %>%
     dplyr::filter_(
       .dots = list(
-        rlang::eval_tidy_rhs(
+        lazyeval::lazy_eval(
           ~ V1 == nrow(table),
           data = table_n_distinct
           )

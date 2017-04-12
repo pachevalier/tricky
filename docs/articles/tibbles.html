@@ -50,15 +50,15 @@
       <h1>Tibbles</h1>
                         <h4 class="author">Paul-Antoine Chevalier</h4>
             
-            <h4 class="date">2017-03-22</h4>
+            <h4 class="date">2017-04-12</h4>
           </div>
 
     
     
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
-<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(plyr)
+<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(tricky)
 <span class="kw">library</span>(tibble)
 <span class="kw">library</span>(readr)
@@ -90,11 +90,18 @@
 ##   wikidata = col_character(),
 ##   frwiki = col_character()
 ## )</code></pre>
-<pre><code>##              keys
-## 1             nom
-## 2 circonscription
-## 3        wikidata
-## 4          frwiki</code></pre>
+<pre><code>## Warning: Truncating vector to length 1</code></pre>
+<pre><code>##               keys
+## 1              nom
+## 2            genre
+## 3           prenom
+## 4      nom_famille
+## 5   date_naissance
+## 6   lieu_naissance
+## 7  circonscription
+## 8      sycomore_id
+## 9         wikidata
+## 10          frwiki</code></pre>
 </div>
 <div id="standardize-table-names" class="section level2">
 <h2 class="hasAnchor">

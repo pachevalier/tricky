@@ -11,8 +11,8 @@ vignette: >
 
 ```{r setup, message=FALSE}
 library(readxl)
-library(dplyr)
 library(plyr)
+library(dplyr)
 library(tricky)
 library(tibble)
 library(readr)

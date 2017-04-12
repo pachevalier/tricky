@@ -31,8 +31,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
   </head>
 
   <body>
@@ -83,7 +81,7 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>table</dt>
-      <dd><p>the name of the input table (either tibble or data.frame)</p></dd>
+      <dd>the name of the input table (either tibble or data.frame)</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -100,17 +98,23 @@
 #&gt; <span class='message'>  genre = col_character(),</span>
 #&gt; <span class='message'>  prenom = col_character(),</span>
 #&gt; <span class='message'>  nom_famille = col_character(),</span>
-#&gt; <span class='message'>  date_naissance = col_datetime(format = ""),</span>
+#&gt; <span class='message'>  date_naissance = col_datetime(format = &quot;&quot;),</span>
 #&gt; <span class='message'>  lieu_naissance = col_character(),</span>
 #&gt; <span class='message'>  circonscription = col_character(),</span>
 #&gt; <span class='message'>  sycomore_id = col_integer(),</span>
 #&gt; <span class='message'>  wikidata = col_character(),</span>
 #&gt; <span class='message'>  frwiki = col_character()</span>
-#&gt; <span class='message'>)</span></div><div class='output co'>#&gt;              keys
-#&gt; 1             nom
-#&gt; 2 circonscription
-#&gt; 3        wikidata
-#&gt; 4          frwiki</div><div class='input'>
+#&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Truncating vector to length 1</span></div><div class='output co'>#&gt;               keys
+#&gt; 1              nom
+#&gt; 2            genre
+#&gt; 3           prenom
+#&gt; 4      nom_famille
+#&gt; 5   date_naissance
+#&gt; 6   lieu_naissance
+#&gt; 7  circonscription
+#&gt; 8      sycomore_id
+#&gt; 9         wikidata
+#&gt; 10          frwiki</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
