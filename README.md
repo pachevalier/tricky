@@ -1,7 +1,7 @@
 
 # Tricky
 
-A set of useful and tricky functions to work with data
+A bag of useful R tricks 
 
 [![Build Status](https://travis-ci.org/pachevalier/tricky.svg?branch=master)](https://travis-ci.org/pachevalier/tricky)
 
