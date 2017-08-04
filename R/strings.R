@@ -23,7 +23,7 @@ str_standardize <- function(string, prefix = "var_") {
       id = "Latin-ASCII"
       ) %>%
     stringr::str_replace_all(
-      pattern = "[[:blank:]\\'\\-\\/]",
+      pattern = "[[:blank:][:punct:]]",
       replacement = "_"
     ) %>%
     stringr::str_replace_all(
