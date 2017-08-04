@@ -1,4 +1,4 @@
-library(tricky)
+library("tricky")
 context("String functions")
 
 test_that(
@@ -12,5 +12,9 @@ test_that(
       object = str_standardize(string = "é,è"),
       expected = "e_e"
     )
+    expect_equal(
+      object = str_standardize(string = "test \n test"),
+      expected = "test_test"
+      )
     }
   )

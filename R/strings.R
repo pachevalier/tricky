@@ -16,14 +16,13 @@
 #'
 str_standardize <- function(string, prefix = "var_") {
   string %>%
-    stringr::str_trim(
-      side = "both") %>%
+    stringr::str_trim(side = "both") %>%
     stringr::str_to_lower() %>%
     stringi::stri_trans_general(
       id = "Latin-ASCII"
       ) %>%
     stringr::str_replace_all(
-      pattern = "[[:blank:][:punct:]]",
+      pattern = "[[:blank:][:punct:]\n]+",
       replacement = "_"
     ) %>%
     stringr::str_replace_all(
