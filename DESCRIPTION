@@ -1,6 +1,6 @@
 Package: tricky
 Title: Tricky R functions
-Version: 0.1
+Version: 0.2.999
 Authors@R: person("Paul-Antoine", "Chevalier", email = "pachevalier@gmail.com", role = c("aut", "cre"))
 Description: Tricky is a collection of useful R functions to deal with data frames, formats, network data, etc.  
 Depends:
