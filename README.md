@@ -5,6 +5,8 @@ A bag of useful R tricks
 
 [![Build Status](https://travis-ci.org/pachevalier/tricky.svg?branch=master)](https://travis-ci.org/pachevalier/tricky)
 
+Contributions (pull requests and issues) are welcome.
+
 ## Installation
 
     library("devtools")
