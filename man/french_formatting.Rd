@@ -2,7 +2,7 @@
 % Please edit documentation in R/numbers.R
 \name{french_formatting}
 \alias{french_formatting}
-\title{Formatting numbers according to French conventions}
+\title{DEPRECATED Formatting numbers according to French conventions}
 \usage{
 french_formatting(x)
 }

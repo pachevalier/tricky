@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DEPRECATED Formatting numbers according to French conventions — french_formatting • tricky</title>
+<title>parse_French_numbers() — parse_French_number • tricky</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -99,31 +99,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>DEPRECATED Formatting numbers according to French conventions</h1>
+    <h1>parse_French_numbers()</h1>
     </div>
 
     
-    <p>This function allows you to format numbers according to French conventions</p>
+    <p>parse_French_numbers()</p>
     
 
-    <pre class="usage"><span class='fu'>french_formatting</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>parse_French_number</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>the number you need to format</p></td>
+      <td><p>a string to be converted to a number</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a string</p>
+    <p>a double</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>french_formatting</span>(<span class='fl'>11000.12</span>)</div><div class='output co'>#&gt; [1] "11 000,12"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>parse_French_number</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"1 123,123"</span>)</div><div class='output co'>#&gt; [1] 1123.123</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

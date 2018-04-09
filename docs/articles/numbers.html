@@ -83,12 +83,18 @@
     
     
 <div class="contents">
-<div id="number-formatting" class="section level2">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tricky)</code></pre></div>
+<div id="parse-numbers" class="section level2">
 <h2 class="hasAnchor">
-<a href="#number-formatting" class="anchor"></a>Number formatting</h2>
+<a href="#parse-numbers" class="anchor"></a>Parse numbers</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/parse_French_number.html">parse_French_number</a></span>(<span class="dt">x =</span> <span class="st">"1 123,123"</span>)</code></pre></div>
+<pre><code>## [1] 1123.123</code></pre>
+</div>
+<div id="format-numbers" class="section level2">
+<h2 class="hasAnchor">
+<a href="#format-numbers" class="anchor"></a>Format numbers</h2>
 <p><code>format_num</code> formats numbers according to a locale (either French or English). <code><a href="../reference/format_num.html">format_num()</a></code> is just a wrapper for the base-R <code>format()</code> function. Therefore, it is possible to use standard arguments of the <code>format()</code> functions such as <code>scientifif = TRUE/FALSE</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tricky)
-<span class="kw"><a href="../reference/format_num.html">format_num</a></span>(<span class="dt">x =</span> <span class="fl">1233.123</span>, <span class="dt">locale =</span> <span class="st">"fr"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/format_num.html">format_num</a></span>(<span class="dt">x =</span> <span class="fl">1233.123</span>, <span class="dt">locale =</span> <span class="st">"fr"</span>)</code></pre></div>
 <pre><code>## [1] "1 233,123"</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/format_num.html">format_num</a></span>(<span class="dt">x =</span> <span class="fl">1233.123</span>, <span class="dt">locale =</span> <span class="st">"en"</span>)</code></pre></div>
 <pre><code>## [1] "1,233.123"</code></pre>
@@ -105,7 +111,8 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#number-formatting">Number formatting</a></li>
+<li><a href="#parse-numbers">Parse numbers</a></li>
+      <li><a href="#format-numbers">Format numbers</a></li>
       </ul>
 </div>
       </div>

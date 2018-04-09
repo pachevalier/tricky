@@ -1,4 +1,4 @@
-#' Formatting numbers according to French conventions
+#' DEPRECATED Formatting numbers according to French conventions
 #'
 #' This function allows you to format numbers according to French conventions
 #' @param x the number you need to format
@@ -24,14 +24,16 @@ french_formatting <- function(x) {
 #' @examples
 #' percent_formatting(0.012)
 #'
-#'
 percent_formatting <- function(x) {
   paste( 100 * x, "%", sep = " ")
 }
 
-#' Converts French formatted numbers into numbers
+#' DEPRECATED Converts French formatted numbers into numbers
 #'
 #' This function allows you to extract the value of French formatted numbers
+#'
+#' This function is deprecated use parse_French_numbers()
+#'
 #' @param x string containing a number
 #'
 #' @return a number
@@ -48,6 +50,27 @@ unfrench_formatting <- function(x) {
     )
   )
 }
+
+
+#' parse_French_numbers()
+#'
+#' @param x a string to be converted to a number
+#'
+#' @return a double
+#' @export
+#'
+#' @examples
+#' parse_French_number(x = "1 123,123")
+#'
+parse_French_number <- function(x) {
+  readr::parse_number(
+    x = x,
+    locale = readr::locale(
+      grouping_mark = " ",
+      decimal_mark = ","
+      )
+    )
+  }
 
 #' Format num
 #'

@@ -18,6 +18,5 @@ This function allows you to format percentages
 \examples{
 percent_formatting(0.012)
 
-
 }
 \keyword{format}

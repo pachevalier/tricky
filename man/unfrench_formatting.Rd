@@ -2,7 +2,7 @@
 % Please edit documentation in R/numbers.R
 \name{unfrench_formatting}
 \alias{unfrench_formatting}
-\title{Converts French formatted numbers into numbers}
+\title{DEPRECATED Converts French formatted numbers into numbers}
 \usage{
 unfrench_formatting(x)
 }
@@ -14,6 +14,9 @@ a number
 }
 \description{
 This function allows you to extract the value of French formatted numbers
+}
+\details{
+This function is deprecated use parse_French_numbers()
 }
 \examples{
 unfrench_formatting(x = "0,12")
