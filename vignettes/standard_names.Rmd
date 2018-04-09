@@ -9,7 +9,15 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette compare `tricky`'s `set_standard_names()` function to `tibble`'s `set_tidy_names()`. 
+What is the difference between `tricky`'s `set_standard_names()` and `tibble`'s `set_tidy_names()` ? 
+
+* `set_standard_names()` removes accents. `set_tidy_names` doesn't.
+* `set_standard_names()` replaces blank spaces with `_` where `set_tidy_names()` uses `.`
+
+According to the [tidyverse's styleguide](http://style.tidyverse.org/syntax.html#object-names) : 
+
+> Variable and function names should use only lowercase letters, numbers, and _.
+
 
 ```{r setup}
 library("tibble")
@@ -22,12 +30,14 @@ table_sample <- tibble(
 
 ```{r}
 table_sample %>% 
-  set_standard_names()
+  set_standard_names() %>% 
+  glimpse()
 ```
 
 ```{r}
 table_sample %>% 
-  set_tidy_names(syntactic = TRUE)
+  set_tidy_names(syntactic = TRUE) %>% 
+  glimpse()
 ```
 
 

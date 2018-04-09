@@ -10,7 +10,6 @@ Contributions (pull requests and issues) are welcome.
 ## Installation
 
     library("devtools")
-    install_github("hadley/rlang")
     install_github("pachevalier/tricky")
 
 ## Functions

@@ -83,7 +83,18 @@
     
     
 <div class="contents">
-<p>This vignette compare <code>tricky</code>’s <code><a href="../reference/set_standard_names.html">set_standard_names()</a></code> function to <code>tibble</code>’s <code><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names()</a></code>.</p>
+<p>What is the difference between <code>tricky</code>’s <code><a href="../reference/set_standard_names.html">set_standard_names()</a></code> and <code>tibble</code>’s <code><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names()</a></code> ?</p>
+<ul>
+<li>
+<code><a href="../reference/set_standard_names.html">set_standard_names()</a></code> removes accents. <code>set_tidy_names</code> doesn’t.</li>
+<li>
+<code><a href="../reference/set_standard_names.html">set_standard_names()</a></code> replaces blank spaces with <code>_</code> where <code><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names()</a></code> uses <code>.</code>
+</li>
+</ul>
+<p>According to the <a href="http://style.tidyverse.org/syntax.html#object-names">tidyverse’s styleguide</a> :</p>
+<blockquote>
+<p>Variable and function names should use only lowercase letters, numbers, and _.</p>
+</blockquote>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"tibble"</span>)
 <span class="kw">library</span>(<span class="st">"tricky"</span>)
 table_sample &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tibble">tibble</a></span>(
@@ -91,20 +102,22 @@ table_sample &lt;-<span class="st"> </span><span class="kw"><a href="http://www.
   <span class="st">`</span><span class="dt">2017/07/07</span><span class="st">`</span> =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2017-07-01"</span>)
   )</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">table_sample <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/set_standard_names.html">set_standard_names</a></span>()</code></pre></div>
-<pre><code>## # A tibble: 1 x 2
-##   base_eleves var_2017_07_07
-##   &lt;chr&gt;       &lt;date&gt;        
-## 1 toto        2017-07-01</code></pre>
+<span class="st">  </span><span class="kw"><a href="../reference/set_standard_names.html">set_standard_names</a></span>() <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>()</code></pre></div>
+<pre><code>## Observations: 1
+## Variables: 2
+## $ base_eleves    &lt;chr&gt; "toto"
+## $ var_2017_07_07 &lt;date&gt; 2017-07-01</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">table_sample <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names</a></span>(<span class="dt">syntactic =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names</a></span>(<span class="dt">syntactic =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>()</code></pre></div>
 <pre><code>## New names:
 ## base élèves -&gt; base.élèves
 ## 2017/07/07 -&gt; X2017.07.07</code></pre>
-<pre><code>## # A tibble: 1 x 2
-##   base.élèves X2017.07.07
-##   &lt;chr&gt;       &lt;date&gt;     
-## 1 toto        2017-07-01</code></pre>
+<pre><code>## Observations: 1
+## Variables: 2
+## $ base.élèves &lt;chr&gt; "toto"
+## $ X2017.07.07 &lt;date&gt; 2017-07-01</code></pre>
 </div>
   </div>
 
