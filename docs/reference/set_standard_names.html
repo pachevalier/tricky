@@ -74,6 +74,9 @@
       <a href="../articles/numbers.html">Numbers</a>
     </li>
     <li>
+      <a href="../articles/standard_names.html">Vignette Title</a>
+    </li>
+    <li>
       <a href="../articles/strings.html">Strings</a>
     </li>
     <li>
@@ -127,32 +130,25 @@ Set standard names set standard names, ie names which can be used in programming
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='fu'>library</span>(<span class='no'>readxl</span>)
-<span class='fu'>library</span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:testthat’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    matches</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+
 <span class='fu'><a href='http://www.rdocumentation.org/packages/readxl/topics/read_excel'>read_excel</a></span>(
 <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>"extdata"</span>,<span class='st'>"panorama.xlsx"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"tricky"</span>)
 ) <span class='kw'>%&gt;%</span>
 <span class='fu'>set_standard_names</span>()</div><div class='output co'>#&gt; # A tibble: 57 x 15
-#&gt;    ministere_porteur
-#&gt;                &lt;chr&gt;
-#&gt;  1               SPM
-#&gt;  2               SPM
-#&gt;  3               SPM
-#&gt;  4               SPM
-#&gt;  5               SPM
-#&gt;  6             MAEDI
-#&gt;  7             MAEDI
-#&gt;  8             MAEDI
-#&gt;  9              MCAS
-#&gt; 10              MCAS
-#&gt; # ... with 47 more rows, and 14 more variables: ministere_nom_complet &lt;chr&gt;,
-#&gt; #   nom_du_projet &lt;chr&gt;, projet_interministeriel &lt;chr&gt;,
+#&gt;    ministere_porteur ministere_nom_complet   nom_du_projet    projet_intermini…
+#&gt;    &lt;chr&gt;             &lt;chr&gt;                   &lt;chr&gt;            &lt;chr&gt;            
+#&gt;  1 SPM               Premier ministre        FRANCE CONNECT   Oui              
+#&gt;  2 SPM               Premier ministre        PNR              Oui              
+#&gt;  3 SPM               Premier ministre        VITAM            Oui              
+#&gt;  4 SPM               Premier ministre        Réseau Intermin… Oui              
+#&gt;  5 SPM               Premier ministre        SÉGUR-FONTENOY   Non              
+#&gt;  6 MAEDI             Ministère des Affaires… DIPLOMATIE v2    Non              
+#&gt;  7 MAEDI             Ministère des Affaires… SAPHIR           Non              
+#&gt;  8 MAEDI             Ministère des Affaires… CROCUS           Non              
+#&gt;  9 MCAS              Ministères Chargés des… IMOTEP           Non              
+#&gt; 10 MCAS              Ministères Chargés des… SI Représentati… Non              
+#&gt; # ... with 47 more rows, and 11 more variables:
 #&gt; #   description_et_objectifs_du_projet &lt;chr&gt;,
 #&gt; #   en_savoir_plus_sur_le_projet &lt;chr&gt;, debut &lt;dttm&gt;,
 #&gt; #   duree_previsionnelle_en_annee &lt;chr&gt;, phase_du_projet_en_cours &lt;chr&gt;,

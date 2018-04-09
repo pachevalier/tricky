@@ -74,6 +74,9 @@
       <a href="../articles/numbers.html">Numbers</a>
     </li>
     <li>
+      <a href="../articles/standard_names.html">Vignette Title</a>
+    </li>
+    <li>
       <a href="../articles/strings.html">Strings</a>
     </li>
     <li>
@@ -127,15 +130,15 @@
     <pre class="examples"><div class='input'><span class='no'>table_test</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble</a></span>(<span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"A"</span>, <span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"b"</span>, <span class='st'>"c"</span>))
 <span class='fu'>filter_dups_</span>(<span class='kw'>.data</span> <span class='kw'>=</span> <span class='no'>table_test</span>, <span class='kw'>.groups</span> <span class='kw'>=</span> ~ <span class='no'>v1</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 2
 #&gt; # Groups:   v1 [1]
-#&gt;      v1    v2
+#&gt;   v1    v2   
 #&gt;   &lt;chr&gt; &lt;chr&gt;
-#&gt; 1     A     a
-#&gt; 2     A     b</div><div class='input'><span class='fu'>filter_dups_</span>(<span class='kw'>.data</span> <span class='kw'>=</span> <span class='no'>table_test</span>, <span class='kw'>.groups</span> <span class='kw'>=</span> ~ <span class='no'>v2</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 2
+#&gt; 1 A     a    
+#&gt; 2 A     b    </div><div class='input'><span class='fu'>filter_dups_</span>(<span class='kw'>.data</span> <span class='kw'>=</span> <span class='no'>table_test</span>, <span class='kw'>.groups</span> <span class='kw'>=</span> ~ <span class='no'>v2</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 2
 #&gt; # Groups:   v2 [1]
-#&gt;      v1    v2
+#&gt;   v1    v2   
 #&gt;   &lt;chr&gt; &lt;chr&gt;
-#&gt; 1     A     b
-#&gt; 2     B     b</div><div class='input'>
+#&gt; 1 A     b    
+#&gt; 2 B     b    </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
