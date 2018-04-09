@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Standard names"
+author: "Paul-Antoine Chevalier"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -15,7 +15,8 @@ This vignette compare `tricky`'s `set_standard_names()` function to `tibble`'s `
 library("tibble")
 library("tricky")
 table_sample <- tibble(
-  `base élèves` = c("toto")
+  `base élèves` = c("toto"), 
+  `2017/07/07` = as.Date("2017-07-01")
   )
 ```
 

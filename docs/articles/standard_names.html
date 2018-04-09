@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vignette Title • tricky</title>
+<title>Standard names • tricky</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -45,13 +45,13 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/networks.html">Vignette Title</a>
+      <a href="../articles/networks.html">Networks functions</a>
     </li>
     <li>
       <a href="../articles/numbers.html">Numbers</a>
     </li>
     <li>
-      <a href="../articles/standard_names.html">Vignette Title</a>
+      <a href="../articles/standard_names.html">Standard names</a>
     </li>
     <li>
       <a href="../articles/strings.html">Strings</a>
@@ -74,8 +74,8 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>Vignette Title</h1>
-                        <h4 class="author">Vignette Author</h4>
+      <h1>Standard names</h1>
+                        <h4 class="author">Paul-Antoine Chevalier</h4>
             
             <h4 class="date">2018-04-09</h4>
           </div>
@@ -87,22 +87,24 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"tibble"</span>)
 <span class="kw">library</span>(<span class="st">"tricky"</span>)
 table_sample &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tibble">tibble</a></span>(
-  <span class="st">`</span><span class="dt">base élèves</span><span class="st">`</span> =<span class="st"> </span><span class="kw">c</span>(<span class="st">"toto"</span>)
+  <span class="st">`</span><span class="dt">base élèves</span><span class="st">`</span> =<span class="st"> </span><span class="kw">c</span>(<span class="st">"toto"</span>), 
+  <span class="st">`</span><span class="dt">2017/07/07</span><span class="st">`</span> =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2017-07-01"</span>)
   )</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">table_sample <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="../reference/set_standard_names.html">set_standard_names</a></span>()</code></pre></div>
-<pre><code>## # A tibble: 1 x 1
-##   base_eleves
-##   &lt;chr&gt;      
-## 1 toto</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   base_eleves var_2017_07_07
+##   &lt;chr&gt;       &lt;date&gt;        
+## 1 toto        2017-07-01</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">table_sample <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tidy_names">set_tidy_names</a></span>(<span class="dt">syntactic =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## New names:
-## base élèves -&gt; base.élèves</code></pre>
-<pre><code>## # A tibble: 1 x 1
-##   base.élèves
-##   &lt;chr&gt;      
-## 1 toto</code></pre>
+## base élèves -&gt; base.élèves
+## 2017/07/07 -&gt; X2017.07.07</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   base.élèves X2017.07.07
+##   &lt;chr&gt;       &lt;date&gt;     
+## 1 toto        2017-07-01</code></pre>
 </div>
   </div>
 
